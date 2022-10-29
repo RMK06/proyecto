@@ -4,7 +4,7 @@
 	error_reporting(-1);
 	require_once '../consultas/usuario.php';
 	//include '../consultas/permisos_usuarios.php';
-	//c = consulta, v = vista, btn = boton, a = automático 
+	//c = consulta, v = vista, btn = boton, a = automático
 		
 	function btn_iniciar_sesion() {
 		$usuario = c_un_usuario_correo();
@@ -17,7 +17,6 @@
 						$_SESSION['usuario'] = $usuario[0]['usuario'];
 						$_SESSION['nombre'] = $usuario[0]['nombre'];
 						$_SESSION['correo'] = $usuario[0]['correo'];
-						//$_SESSION['coordinador'] = $usuario[0]['coordinador']; 
 						$_SESSION['logueado'] = 1;
 						
 						echo 1;
@@ -33,7 +32,7 @@
 	function btn_salir() {
 		@\session_start();
 		$id = $_SESSION['id'];
-		if (session_unset() && session_destroy()) {;
+		if (closeir($dir_handle) && session_destroy()) {;
 			echo 1;
 		} else {
 			echo 'Ocurrió un problema al intentar cerrar sesión, intentelo nuevamente';
