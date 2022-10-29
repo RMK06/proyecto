@@ -455,18 +455,18 @@ var btn_salir = 0;
     }
 });
 	// Obtener una referencia al elemento canvas del DOM
-	var $gra = document.querySelector("#gra");
+	let $gra = document.querySelector("#gra");
 	// Las etiquetas son las que van en el eje X. 
-	var eti = ["Enero", "Febrero", "Marzo", "Abril"]
+	let eti = ["Enero", "Febrero", "Marzo", "Abril"]
 	// Podemos tener varios conjuntos de datos. Comencemos con uno
-	var datos2020 = {
+	let datos2020 = {
     	label: "Ventas por mes",
     	data: [4000, 1900, 8000, 5102], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de eti
     	backgroundColor: 'rgba(60, 162, 235, 0.2)', // Color de fondo
     	borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
     	borderWidth: 1,// Ancho del borde
 };
-new Chart($gra, {
+	Chart($gra, {
     type: 'line',// Tipo de gráfica
     data: {
         labels: eti,
@@ -486,11 +486,11 @@ new Chart($gra, {
     }
 });
 // Obtener una referencia al elemento canvas del DOM
-var $graf = document.querySelector("#graf");
+let $graf = document.querySelector("#graf");
 // Las etiquetas son las porciones de la gráfica
-var etique = ["Ventas", "Donaciones", "Trabajos"]
+let etique = ["Ventas", "Donaciones", "Trabajos"]
 // Podemos tener varios conjuntos de datos. Comencemos con uno
-var datosIngresos = {
+let datosIngresos = {
     data: [1500, 400, 2000, 7000], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etique
     // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
     backgroundColor: [
