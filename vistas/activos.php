@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
-	require '../consultas/activos.php';
-	require '../necesario/estructura.php';
+	require_once '../consultas/activos.php';
+	require_once '../necesario/estructura.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -14,13 +14,14 @@
 					?>
 						<div class="col s12 no-padding">
 							<h5 class="titulo" style="position: relative;">
-								<b>Activos existentes</b>
+								<strong>Activos existentes</strong>
 								
 							</h5>
 							<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>
 						</div>
 						<div class="col s12 no-padding" style="overflow-x: auto;overflow-y: hidden;">
 							<table class="striped highlight">
+								<caption></caption>
 								<thead>
 									<tr>
 										<th>ID</th>
@@ -57,10 +58,10 @@
 													<td>
 														<?php $activos_all = $activos[$i]['id']; ?>
 														
-															<i class="material-icons borrar_bloqueada  waves-dark  tooltipped icono-eliminar icono-ver-mas" data-id="<?php echo $activos[$i]['id']; ?>" data-position="bottom" data-tooltip="Ver más">open_in_new</i>
+															<em class="material-icons borrar_bloqueada  waves-dark  tooltipped icono-eliminar icono-ver-mas" data-id="<?php echo $activos[$i]['id']; ?>" data-position="bottom" data-tooltip="Ver más">open_in_new</em>
 														
-														<i class="material-icons borrar_bloqueada  waves-dark tooltipped icono-eliminar" data-id="<?php echo $usuarios[$i]['id']; ?>" data-position="bottom" data-tooltip="Editar">loop</i>
-														<i class="material-icons borrar_bloqueada  waves-dark tooltipped icono-eliminar" data-id="<?php echo $usuarios[$i]['id']; ?>" data-position="bottom" data-tooltip="Eliminar">delete</i>
+														<em class="material-icons borrar_bloqueada  waves-dark tooltipped icono-eliminar" data-id="<?php echo $usuarios[$i]['id']; ?>" data-position="bottom" data-tooltip="Editar">loop</em>
+														<em class="material-icons borrar_bloqueada  waves-dark tooltipped icono-eliminar" data-id="<?php echo $usuarios[$i]['id']; ?>" data-position="bottom" data-tooltip="Eliminar">delete</em>
 													</td>
 
 												</tr>
@@ -76,7 +77,7 @@
 					?>
 						<div class="col s12 no-padding">
 							<h5 class="titulo" style="position: relative;">
-								<b>No existe ningún activo</b>
+								<strong>No existe ningún activo</strong>
 							</h5>
 						</div>
 					<?php
@@ -102,23 +103,23 @@
 							<div class="row">
 							
 								<div class="input-field col s6">
-									<input disabled  id="disabled"  value="<?php echo $activos[0]['nombre']?>" type="text" class="validate activar">
+									<emnput disabled  id="disabled"  value="<?php echo $activos[0]['nombre']?>" type="text" class="validate activar">
 									<label for="disabled">Nombre</label>
 								</div>
 								<div class="input-field col s6">
-									<input disabled  id="disabled" type="text" value="<?php echo $activos[0]['serial']?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="<?php echo $activos[0]['serial']?>" class="validate activar">
 									<label for="disabled">Serial</label>
 								</div>
 								<div class="input-field col s6">
-									<input disabled  id="disabled" type="text" value="<?php echo $activos[0]['placa']?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="<?php echo $activos[0]['placa']?>" class="validate activar">
 									<label for="disabled">Placa</label>
 								</div>
 								<div class="input-field col s6">
-									<input disabled  id="disabled" type="text" value="<?php echo $activos[0]['tipo']?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="<?php echo $activos[0]['tipo']?>" class="validate activar">
 									<label for="disabled">Tipo</label>
 								</div>
 								<div class="input-field col s6">
-									<input disabled  id="disabled" type="text" value="<?php echo $activos[0]['marca']?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="<?php echo $activos[0]['marca']?>" class="validate activar">
 									<label for="disabled">Marca</label>
 								</div>
 								<div class="input-field col s6">
@@ -126,11 +127,11 @@
 										$precio = $activos[0]['precio'];
 										$precioFormato = number_format($precio, 0, '.', '.'); 
 									?>
-									<input disabled  id="disabled" type="text" value="$<?php echo  $precioFormato  ?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="$<?php echo  $precioFormato  ?>" class="validate activar">
 									<label for="disabled">Precio</label>
 								</div>
 								<div class="input-field col s12">
-									<input disabled  id="disabled" type="text" value="<?php echo $activos[0]['detalles']?>" class="validate activar">
+									<emnput disabled  id="disabled" type="text" value="<?php echo $activos[0]['detalles']?>" class="validate activar">
 									<label for="disabled">Detalles</label>
 								</div>
 							</div>
@@ -138,7 +139,7 @@
 								<div class="center">
 									Estado
 								</div>
-								<br>
+								<strongr>
 								<?php 
 									$estadoActivo = estado_id($activos[0]['estado']);
 								?>
@@ -148,7 +149,7 @@
 								<div class="center">
 									Uso
 								</div>
-								<br>
+								<strongr>
 								<?php 
 									if ($activos[0]['estado'] == 1) {
 										?>
@@ -185,14 +186,14 @@
 								<ul class="subnav">
 									<li class="waves-effect waves-dark tooltippedipped" id="ver_usuarios" data-position="bottom" data-tooltip="Ver usuarios"> 	
 										<div>
-											<i class="material-icons">remove_red_eye</i>
+											<em class="material-icons">remove_red_eye</em>
 										</div>
 									</li>
 									<li  class="waves-effect waves-dark tooltipped" id="crear_usuario" data-position="bottom" data-tooltip="Crear usuario"><div>
-										<i class="material-icons" style="color: black;">add</i></div></li> 
+										<em class="material-icons" style="color: black;">add</em></div></li> 
 									
-									<!--<li class="waves-effect waves-dark right"><i class="material-icons">account_circle</i></li>
-									<li class="waves-effect waves-dark right"><i class="material-icons">notifications</i></li>-->
+									<!--<li class="waves-effect waves-dark right"><em class="material-icons">account_circle</em></li>
+									<li class="waves-effect waves-dark right"><em class="material-icons">notifications</em></li>-->
 								</ul>
 							</div>
 							<?php

@@ -1,8 +1,8 @@
 <?php
 	@\session_start();
-	require '../consultas/asignar_activo.php';
-	require '../necesario/estructura.php';
-	require '../consultas/activos.php';
+	require_once '../consultas/asignar_activo.php';
+	require_once '../necesario/estructura.php';
+	require_once '../consultas/activos.php';
 	$activosSelect = allActivos();
 	$controlador = new controlador();
 	$controlador->base('interno');
@@ -13,13 +13,14 @@
 					
 				<div class="col s12 no-padding">
 						<h5 class="titulo" style="position: relative;">
-							<b>Activos asignados</b>
+							<strong>Activos asignados</strong>
 							
 						</h5>
 						<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>
 					</div>
 					<div class="col s12 no-padding" style="overflow-x: auto;overflow-y: hidden;">
 						<table class="striped highlight centered">
+						<caption></caption>
 							<thead>
 							  <tr>
 							      <th>ID</th>
@@ -78,7 +79,7 @@
 														$fechaMes = date_format($fecha1,"m");
 														$fechaYear = date_format($fecha1,"Y");
 														//echo ($mesActual);
-														if ($fechaMes == $mesActual && $fechaMes == $mesActual &&  $fechaDia < 5) {
+														if ($fechaMes == $mesActual &&  $fechaDia < 5) {
 															?>
 																<div class="activoVen tooltipped" data-tooltip="La fecha de entrega de activo se vence en 5 dias"><?php echo $activos[$i]['fecha_fin']; ?>
 																</div>
@@ -92,65 +93,13 @@
 													
 												</td>
 												<td>
-													<div class="agregarMov" data-id="<?php echo $activos[$i]['id']; ?>"><i class="material-icons" >add</i></div>
+													<div class="agregarMov" data-id="<?php echo $activos[$i]['id']; ?>"></em class="material-icons" >add</em></div>
 												</td>
 											</tr>
 										<?php	
 												
 									}
-										$fecha1= new DateTime("");
-										$fecha2= new DateTime("17-09-2022");
-										$difference = $fecha1->diff($fecha2);
-										if ($difference->format('%R%a days') < 5) {
-											//echo 'El activo se vence en 5 dias';
-										}
-										echo '<br>';
-										//$fecha_inicial = 2022-09-11;
-										$fecha = new DateTime("30-09-2022");
-										date_sub($fecha, date_interval_create_from_date_string("6 days"));
-										//echo date_format($fecha,"d-m-Y");
-										//echo $difference->format('%R%a days');
-										if (date_format($fecha,"d-m-Y") > 5) {
-											//echo 'tiene menos de 5 dias para vencer';
-										}
-										// El resultados sera 3 dias
-										//echo $difference->format('%R%a days');		
-										//print_r ($fecha1);
-
-										$fechao = new DateTime("");
-										date_sub($fechao, date_interval_create_from_date_string("0 days"));
-										//$fechao = date_format($fechao,"d");
-										$fechaActual = date_format($fechao,"d");
-										$mesActual = date_format($fechao,"m");
-										$yearActual = date_format($fechao,"Y");
-										$fecha1 = new DateTime("11-09-2022"); //fecha de vencimiento
-										date_sub($fecha1, date_interval_create_from_date_string("5 days"));
-										//$fechaDia = date_format($fecha1,"d-m-Y"); ejemplo
-										$fechaDia = date_format($fecha1,"d");
-										$fechaMes = date_format($fecha1,"m");
-										$fechaYear = date_format($fecha1,"Y");
-										//echo ($mesActual);
-										if ($fechaMes == $mesActual && $fechaMes == $mesActual &&  $fechaDia < 5) {
-											echo $fechaDia;
-											echo '<br>';
-											echo $fechaActual;
-											echo '<br>';
-											echo 'menos de 5 dias';
-
-										}
-										$fecha2 = new DateTime(""); // fecha actual
-										$diferencia = $fecha2->diff($fecha1);
-										//echo $diferencia->days . ' dias';
-										//echo '<br>';
-										//if ($diferencia->days >= 5) {
-											//echo 'tiene menos de 5 dias por vencer';
-										//}
 										
-										//$fecha2= new DateTime("17-09-2022");
-										//$difference = $fecha1->diff($fecha2);
-										//if ($difference->format('%R%a days') < 5) {
-											//echo 'El activo se vence en 5 dias';
-										//}
 										
 								?>
 								
@@ -163,7 +112,7 @@
 	<div id="modal1" class="modal">
 		
 	<div class="modal-content">
-		<h4>Agregar Movimiento</h4><br>
+		<h4>Agregar Movimiento</h4><strongr>
 		<input hidden  id="idActivo" type="text" class="validate" value="1">
 		<div class="input-field col s12">
 			<select id="selectMov">
@@ -179,7 +128,7 @@
 					<div class="row">
 						<div id="devolucion">
 							<div>Devolucion</div>
-							<br>
+							<strongr>
 							<div class="input-field col s6">
 								<input  id="mDevolucion" type="text" class="validate">
 								<label for="mDevolucion">Motivo Devolucion</label>
@@ -219,7 +168,7 @@
 												}
 											}
 										?>
-									</select><br>
+									</select><strongr>
 								</div>
 								<div class="input-field col s12">
 									<textarea id="obActivo" class="materialize-textarea"></textarea>
@@ -230,7 +179,7 @@
 						</div>
 						<div id="detalles">
 							<div>Agregar Detalles</div>
-							<br>
+							<strongr>
 							<div class="input-field col s6">
 								<input  id="motDetalles" type="text" class="validate">
 								<label for="motDetalles">Motivo Detalles</label>
