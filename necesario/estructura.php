@@ -81,12 +81,12 @@
                 <ul id="slide-out" class="sidenav sidenav-fixed">
                     <li>
                         <div class="user-view">
-                            <a href="#user"><img class="circle" src="https://images.pexels.com/photos/6533803/pexels-photo-6533803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></a>
+                            <a href="#user"><img class="circle" alt="" src="https://images.pexels.com/photos/6533803/pexels-photo-6533803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></a>
                             <a href="#name"><span class="white-text name"><?php echo $_SESSION['nombre'];?>  <?php echo $_SESSION['apellidos']; ?></span></a>
                             <a href="#email"><span class="white-text email"><?php echo $_SESSION['correo'] ?></span></a>
                         </div>
                     </li>                    
-                    <li><a class="boton white-text" id="correo"> <i class="material-icons" style="color: white">home</i>Home</a></li>
+                    <li><a class="boton white-text" id="correo"> <em class="material-icons" style="color: white">home</em>Home</a></li>
                     <li><a class="subheader">Aplicaciones</a></li>
                     <a href=""></a>
                     <?php 
@@ -103,7 +103,7 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <em class="material-icons" style="color: #5499C7">person</em>Administrador  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">person</em>Administrador  <em class="material-icons right">keyboard_arrow_down</em>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
@@ -136,7 +136,7 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo1; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <em class="material-icons" style="color: #5499C7">computer</em>Activos  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">computer</em>Activos  <em class="material-icons right">keyboard_arrow_down</em>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
