@@ -1,16 +1,16 @@
-<?php 
-    require 'necesario/estructura.php';
+<?php
+    require_once 'necesario/estructura.php';
     $controlador = new controlador();
     @\session_start();
     if (isset($_SESSION['id'])) {
-        ?> 
+        ?>
             <script>
                 window.location.href = 'vistas/home.php';
             </script>
         <?php
     } else {
             $controlador->base('externo');
-        ?> 
+        ?>
             <div class="row">
                     <div class="col s12 l12">
                         <div class="col s6 l6 izquierda"></div>
@@ -18,7 +18,8 @@
                             <div class="col s12">
                                 <div class="row">
                                     <div class="center logo_login">
-                                        <img class="responsive-img img-login" src="almacenamiento/INVENTORY CONTRO_CO.png" draggable="false">
+                                        <img class="responsive-img img-login"
+                                        src="almacenamiento/INVENTORY CONTRO_CO.png" draggable="false">
                                     </div>
                                 </div>
                                 <div class="row">
