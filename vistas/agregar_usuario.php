@@ -121,7 +121,7 @@
 									<label for="contrasena">Contraseña<span class="asterisco">*</span><span class="ayuda ayuda_contrasena tooltipped" data-position="bottom" data-tooltip="">?</span></label>
 								</div>
 								<div class="input-field col s12 m6">
-									<i class="material-icons prefix">lock</em>
+									<em class="material-icons prefix">lock</em>
 									<input id="repeticion" type="password" class="validate">
 									<label for="repeticion">Repetir la contraseña<span class="asterisco">*</span></label>
 								</div>

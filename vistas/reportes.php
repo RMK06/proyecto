@@ -45,6 +45,7 @@
 				</div>
 				<div class="col s12 no-padding" style="overflow-x: auto;overflow-y: hidden;">
 					<table class="striped highlight centered">
+						<caption></caption>
 						<thead>
 						  <tr>
 						      <th>ID</th>
@@ -170,10 +171,10 @@
 						<div class="col s12 no-padding subnav-wrapper">
 							<ul class="subnav">
 								<li  class="waves-effect waves-dark tooltipped" id="ver_activos" data-position="bottom" data-tooltip="Ver activos asignados"><div>
-									<i class="material-icons" style="color: #95A5A6; margin-left: 15px;">remove_red_eye</i></div>
+									<em class="material-icons" style="color: #95A5A6; margin-left: 15px;">remove_red_eye</em></div>
 								</li> 
 								<li  class="waves-effect waves-dark tooltipped" id="asignar" data-position="bottom" data-tooltip="asignar activos"><div>
-									<i class="material-icons" style="color: #95A5A6;  margin-left: 20px;">add</i></div>
+									<em class="material-icons" style="color: #95A5A6;  margin-left: 20px;">add</em></div>
 								</li>
 								<div class="divider"></div>
 							</ul>
