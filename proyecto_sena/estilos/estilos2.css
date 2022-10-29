@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+body{
+	background: #154360;
+
+
+}
+
+header, main, footer,body {
+      padding-left: 210px;
+      height: 100px !important;
+
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer,body {
+        padding-left: 0;
+
+      }
+    }
+ .sidenav{
+ 	width: 210px;
+ }
+
+.panel{
+	
+   
+    border-radius: 20px;
+    overflow-y:auto ;
+    overflow-x: auto !important; 
+    padding: 10px
+    font-family: 'Roboto', sans-serif;
+   
+}
+.tarjeta1{
+	height: 130px;
+	border-radius: 20px;	
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%);
+	font-size: 18px;
+
+}
+.tarjeta1 > span{
+	display: flex;
+	justify-content: center;
+
+}
+.tarjeta2 > span{
+	display: flex;
+	justify-content: center;
+
+}
+.tarjeta2{
+	height: 200px;
+	border-radius: 20px;	
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%);
+	font-size: 18px;
+
+}
+.sidenav-trigger{
+	opacity: 1.0;
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%) !important;
+}
+.tarjeta3 > span{
+	display: flex;
+	justify-content: center;
+
+}
+.tarjeta3{
+	height: 320px;
+	border-radius: 20px;	
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%);
+	overflow-y: scroll; 
+
+}
+.tarjeta4{
+	height: 320px;
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%);
+	display: flex;
+	justify-content: center;
+	
+}
+.boton{
+	cursor: pointer;
+	color: white;
+	
+}
+li:hover{
+	
+	color: pink;
+	font-size: 16px !important;
+}
+.panel2{
+	height: 620px;
+	width: 100%;
+	box-shadow: 1px 1px 5px rgb(1 1 1 / 10%);
+	overflow-y: scroll; 
+}
+.icon{
+	border-radius: 20px;
+
+}
+
+.sidenav{
+	
+	background: rgb(0,0,0,0.0);
+	-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,0.0),0 0px 0px -1px rgba(0,0,0,0.0),0 0px 0px 0 rgba(0,0,0,0.0);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+
+}
+#row{
+	margin-right: 0 !important;
+
+}
+a{
+	color: white;
+}
+li{
+	color: white !important;
+}
+
+@media only screen and (max-width : 992px){
+	.sidenav{
+	
+	background: black;
+	-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,0.5),0 1px 1px -1px rgba(0,0,0,0.5),0 0px 0px 0 rgba(0,0,0,0.5);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+
+}
+}

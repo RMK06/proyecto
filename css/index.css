@@ -1,0 +1,359 @@
+.izquierda {
+	background: url('../almacenamiento/img.jpg');
+	background-size: cover;
+	height: 100% !important;
+	left: 0 !important;
+	position: absolute;
+}
+.panel_der {
+	background: #7D79F2;
+	box-shadow: -15px 0px 20px rgba(0,0,0,0.1);
+	height: 100% !important;
+	position: absolute;
+	right: 0 !important;
+}
+	.logo_login {
+			background: white !important;
+			border-radius: 20px;
+			margin: auto;
+			margin-bottom: 40px;
+			padding-bottom: 10px;
+			padding-top: 10px;
+			width: 350px !important;
+		}
+			.logo_login img {
+				width: 300px;
+			}
+		.panel_der .prefix {
+			color: #FFF !important;
+		}
+		.panel_der input {
+			color: #FFF;
+		}
+			.panel_der input:focus {
+				border-bottom: 1px solid #FFF !important;
+				box-shadow: 0 1px 0 0 #FFF !important;
+			}
+		.panel_der label {
+			color: #FFF !important;
+		}
+		.panel_der .helper-text {
+			color: #FFF !important;
+			text-align: right;
+			text-decoration: underline;
+		}
+		.iniciar_sesion {
+			background: #FFF !important;
+			border-radius: 5px;
+			color: #212F3D;
+			font-weight: bold;
+		}
+			@keyframes llamar_boton {
+				0% {
+					box-shadow: 0px 0px 0px #FFF;
+				}
+				50% {
+					box-shadow: 0px 0px 20px #FFF;
+				}
+			}
+			.iniciar_sesion:hover {
+				box-shadow: 0px 0px 0px #FFF !important;
+			}
+			.iniciar_sesion:focus {
+				border: 2px solid #259B40;
+			}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+body{
+	background: #154360;
+}
+header, main, footer,body {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      	header, main, footer,body {
+        padding-left: 0;
+   	}
+}
+.panel {
+		background-color: white;
+		border-radius: 20px;
+		font-weight: normal;
+		height: calc(100% - 40px);
+		margin-left: 3px;
+		margin-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 40px;
+		padding-right: 40px;
+		position: absolute;
+		overflow-y: auto;
+		overflow-x: hidden !important;
+		width: calc(100% - 320px);
+	}
+.boton{
+	cursor: pointer;
+	color: white;
+	
+}
+li:hover{
+	color: pink;
+	font-size: 16px !important;
+}
+.sidenav{
+	background: rgb(0,0,0,0.0);
+	-webkit-box-shadow:0 1px 1px 0 rgba(0,0,0,0.0),0 0px 0px -1px rgba(0,0,0,0.0),0 0px 0px 0 rgba(0,0,0,0.0);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+
+}
+a{
+	color: white;
+}
+li{
+	color: white !important;
+}
+
+#gra {
+	width: 100%;
+    max-height: 300px;
+}
+#grafica {
+	width: 100%;
+    max-height: 300px;
+}
+.subheader {
+	color: white !important;
+	font-weight: 300 !important;
+}
+.title-home {
+	font-size: 30px;
+	font-weight: 700;
+}
+.text-sub {
+	font-size: 25px;
+	font-weight: 500;
+}
+.sub-icon {
+	font-size: 20px;
+	font-weight: 300;
+}
+.sidenav-trigger {
+	margin-left: 40px;
+	padding-top: 15px;
+	font-size: 55px;
+}
+.icono-actualizar {
+	color: #2ECC71;
+}
+.icono-eliminar {
+	color: #E74C3C;
+}
+	.icono-actualizar:hover {
+		transition: all .4s;
+		transform: rotate(360deg);
+	}
+	.icono-eliminar:hover {
+		transition: all .4s;
+		transform: rotate(360deg);	
+	}
+.activo {
+	background: #58D68D;
+	border-radius: 15px;
+	color: white;
+}
+.inactivo {
+	background: #C0392B;
+	border-radius: 15px;
+	color: white;
+}
+
+.buen_estado {
+	background: #2ECC71;
+	border-radius: 15px;
+	color: white;
+	font-height: 600;	
+}
+.danado {
+	background: #A93226;
+	border-radius: 15px;
+	color: white;	
+	font-weight: 600;
+}
+.mantenimiento {
+	background: #99A3A4;
+	border-radius: 15px;
+	color: white;	
+	font-weight: 600;
+}
+.input-field {
+	margin-top: 0;
+}
+
+.actualizar_usuario{
+	color: #52BE80 !important;
+}
+.actualizar_usuario:hover{
+	transform: rotate(360deg);
+	transform: all 5s;
+}
+.eliminar_usuario{
+	color: #C0392B !important;
+}
+.eliminar_usuario:hover{
+	transform: rotate(360deg);
+	transform: all 5s;
+}
+.ver_usuarioIcon{
+	color: #2E86C1 !important;
+}
+.ver_usuarioIcon:hover{
+	transform: rotate(360deg);
+	transform: all 5s;
+}
+.btn-flat:focus{
+	background: none;
+}
+button:focus {
+    outline: none;
+    background-color: none;
+}
+.info:hover {
+	background: red;
+}
+.icon-ro:hover {
+	transition: all .4s;
+	transform: rotate(360deg);	
+}
+
+.edi_usuario{
+    font-size: 25px;
+
+    font-weight: 700;
+}
+
+.ver_usuario {
+	color: #95A5A6;
+    margin-left: 15px;
+    font-size: 30px;
+    padding-left: 5px;
+}
+
+.fondo-icono:hover {
+	color: #17202A !important;
+	background: #85C1E9;
+    height: 33px;
+    width: 43px;
+    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+    transform: translateY(2px);
+    transition: all 0.5s;
+}
+
+.activoUso{
+	background: #3498DB;
+	border-radius: 15px;
+	color: white;
+}
+.sidenav .collapsible-body, .sidenav.fixed .collapsible-body {
+	background: none !important;
+}
+
+.adm-con {
+	padding-left: 15px;
+}
+
+.collapsible-body:hover {
+	font-size: -15px !important;
+}
+
+li:hover {
+	font-size: 15px !important;
+}
+
+.cursor_sis {
+	cursor:pointer;
+}
+
+
+.list__show{
+    border-left: 1px solid #D6EAF8;
+	border-radius: 5px;
+}
+
+.keyboard-focused .collapsible-header:focus {
+	background-color: transparent;
+}
+.list__inside {
+	color: #D5F5E3;
+}
+
+.activoVen {
+	background: #CD6155;
+    border-radius: 15px;
+    color: white;
+}
+.notificaciones {
+	height: 35px;
+    /* float: right; */
+    right: 20px;
+    bottom: 550px;
+    padding-left: 30px !important;
+    padding-right: 15px !important;
+    position: fixed;
+    z-index: 2;
+}
+
+.notificacion-chatbot {
+	background: red;
+    border-radius: 50%;
+    bottom: 568px;
+    font-size: 1em;
+    font-style: normal;
+    color: #FFF;
+    margin-top: -10px;
+    right: 20px;
+    padding: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: fixed;
+    z-index: 3;
+}
+
+.contenido-notificaciones {
+	background: #EAEDED;
+    height: 300px;
+    width: 310px;
+    /* float: right; */
+    right: 43px;
+    bottom: 610px;
+    //bottom: 240px;
+    position: fixed;
+	opacity: 0;
+	border-radius: 10px;
+	overflow-y: auto;
+}
+
+.divisor {
+	height: 1px;
+  	background-color: #1A5276;
+}
+
+.panelNotificaciones {
+	background-color: #154360;
+}
+
+.tituloNotificaciones {
+	color: white;
+	font-size: 16px;
+	font-weight: 700;
+	cursor:auto;
+}
+
+.data-table {
+	cursor:context-menu;
+}
+
+.foto_usuario {
+	width: 60px;
+}
