@@ -1,12 +1,13 @@
 <?php 
 
     class controlador {
-        function base($a) {
+        function public base($a) {
             if ($a == 'interno') {
                ?>
                     <!DOCTYPE html>
-                    <html>
+                    <html lang>
                     <head>
+                        <title></title>
                         <meta charset="utf-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="../librerias/materialize.min.css">
@@ -27,7 +28,7 @@
             } else {
                 ?>
                     <!DOCTYPE html>
-                    <html>
+                    <html lang>
                     <head>
                         <meta charset="utf-8">
                         <title>Inventory Control CO</title>
@@ -102,7 +103,7 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <i class="material-icons" style="color: #5499C7">person</i>Administrador  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">person</em>Administrador  <i class="material-icons right">keyboard_arrow_down</i>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
@@ -126,7 +127,7 @@
                         if ($consultaper[0]['empleados'] == 1) {
                             ?>
                                 <li class="border-1"><a class="white-text" id="colaboradores"> 
-                                   <i class="material-icons" style="color: #58D68D">people</i>Colaboradores</a>
+                                   <em class="material-icons" style="color: #58D68D">people</em>Colaboradores</a>
                                 </li>
                             <?php
                         }
@@ -135,7 +136,7 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo1; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <i class="material-icons" style="color: #5499C7">computer</i>Activos  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">computer</em>Activos  <i class="material-icons right">keyboard_arrow_down</i>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
@@ -172,22 +173,22 @@
                         if ($consultaper[0]['pendientes'] == 1) {
                             ?>
                                 <li>
-                                    <a class="white-text" id="pendientes" href="#!"> <i class="material-icons" style="color: #7FB3D5">check_circle</i>Pendientes</a>
+                                    <a class="white-text" id="pendientes" href="#!"> <em class="material-icons" style="color: #7FB3D5">check_circle</em>Pendientes</a>
                                 </li>
                             <?php
                         }
                         if ($consultaper[0]['reportes'] == 1) {
                             ?>
                                 <li>
-                                    <a class="white-text" id="reportes" href="#!"> <i class="material-icons" style="color: #F4D03F">inventory</i>Reportes</a>
+                                    <a class="white-text" id="reportes" href="#!"> <em class="material-icons" style="color: #F4D03F">inventory</em>Reportes</a>
                                 </li>
                             <?php
                         }
                     ?>
                     <li><a class="subheader">Ajustes</a></li>
-                    <li><a class="white-text" href="#!"> <i class="material-icons" style="color: white;">settings</i>Configuracion</a></li>
-                    <li><a class="white-text" href="#!"> <i class="material-icons" style="color: white;">history</i>Historial</a></li>
-                    <li><a class="white-text salir" href="#!"> <i class="material-icons" style="color: white;">logout</i>Salir</a></li>
+                    <li><a class="white-text" href="#!"> <em class="material-icons" style="color: white;">settings</em>Configuracion</a></li>
+                    <li><a class="white-text" href="#!"> <em class="material-icons" style="color: white;">history</em>Historial</a></li>
+                    <li><a class="white-text salir" href="#!"> <em class="material-icons" style="color: white;">logout</em>Salir</a></li>
               </ul>
             <?php
         }   
@@ -198,13 +199,13 @@
                     <div class="col s12 no-padding subnav-wrapper">
                         <ul class="subnav">
                             <a href="administrador.php">
-                                <i class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6; margin-left: 15px; font-size: 30px;" data-tooltip="Ver usuarios">remove_red_eye</i>
+                                <em class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6; margin-left: 15px; font-size: 30px;" data-tooltip="Ver usuarios">remove_red_eye</em>
                             </a>
                             <a href="agregar_usuario.php">
-                                <i class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6;  margin-left: 20px;" data-tooltip="Crear Colaborador">add_box</i>
+                                <em class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6;  margin-left: 20px;" data-tooltip="Crear Colaborador">add_box</em>
                             </a>
                             <a href="asignar_permiso.php">
-                                <i class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6;  margin-left: 20px;" data-tooltip="Asignar Permisos">sync_problem</i>
+                                <em class="material-icons tooltipped ver_usuario fondo-icono" style="color: #95A5A6;  margin-left: 20px;" data-tooltip="Asignar Permisos">sync_problem</em>
                             </a>
                             <div class="divider"></div>
                         </ul>
@@ -223,7 +224,7 @@
             $contarNotificacionesAll = contarNotificaciones();
             $notificacionesString = $contarNotificacionesAll[0]['COUNT(*)'];
             ?>
-                <i class="notificacion-chatbot"><?php echo $notificacionesString ?></i>
+                <em class="notificacion-chatbot"><?php echo $notificacionesString ?></em>
                 <img src="../almacenamiento/campana.png" class="notificaciones" id="notificaciones" alt="">
                 <div class="row">
                     <div class="contenido-notificaciones" id="contenido-notificaciones">
@@ -231,7 +232,7 @@
                             <div class="cerrar" id="cerrar-notificaciones">
                                 <div class="col s6 tituloNotificaciones">NOTIFICACIONES</div>
                                 <div class=" col s6 right-align" >
-                                    <i class="material-icons">close</i>
+                                    <em class="material-icons">close</em>
                                 </div>
                             </div>
                         </div>
@@ -241,6 +242,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     <table>
+                                        <caption></caption>
                                         <thead>
                                         <tr>
                                             <th class="center">Detalles</th>
@@ -253,8 +255,8 @@
                                                     ?>
                                                         <tr>
                                                             <td class="center"><?php echo $notificaciones[$i]['mensaje'] ?></td>
-                                                            <td class="center"><i style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $notificaciones[$i]['id']; ?>">delete</i>
-                                                            <i style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $notificaciones[$i]['id']; ?>">do_not_disturb_on</i>
+                                                            <td class="center"><em style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $notificaciones[$i]['id']; ?>">delete</em>
+                                                            <em style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $notificaciones[$i]['id']; ?>">do_not_disturb_on</em>
                                                             </td>
                                                         </tr>
                                                     <?php
