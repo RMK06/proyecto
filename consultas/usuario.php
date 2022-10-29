@@ -275,7 +275,12 @@
 				}
 			}else {
 				//checket seleccionado
-				$sql1 = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`, `contrasena`, `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `codigo`, `foto`) VALUES ('".$_POST['nombre_usuario']."','".$_POST['apellido_usuario']."','".$_POST['correo_usuario']."','1','".password_hash($_POST['pass'], PASSWORD_DEFAULT)."','".$_POST['tipo_identificacion']."','".$_POST['sexo']."','".$_POST['cedula_usuario']."','".$_POST['numero_usuario']."','".$_POST['direccion_usuario']."','".$_POST['barrio_usuario']."','".$_POST['localidad_usuario']."','".$_POST['cargo']."','1','0','0','0') ";
+				$sql1 = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`, `contrasena`,`tipo_identificacion`,
+				`sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `codigo`, `foto`)
+				VALUES ('".$_POST['nombre_usuario']."','".$_POST['apellido_usuario']."','".$_POST['correo_usuario']."','1',
+				'".password_hash($_POST['pass'], PASSWORD_DEFAULT)."','".$_POST['tipo_identificacion']."','".$_POST['sexo']."',
+				'".$_POST['cedula_usuario']."','".$_POST['numero_usuario']."','".$_POST['direccion_usuario']."',
+				'".$_POST['barrio_usuario']."','".$_POST['localidad_usuario']."','".$_POST['cargo']."','1','0','0','0') ";
 				if ($conn->query($sql1) === true) {
 					$ultimo_id = mysqli_insert_id($conn);
 					$sql3 = "INSERT INTO `permisos`(`id_usuario`, `activos`, `activos_asignados`, `empleados`, `historial`, `reportes`, `pendientes`, `administrador`) VALUES ('".$ultimo_id."','".$_POST['activos']."','".$_POST['activos_asigandos']."','".$_POST['empleados']."','".$_POST['historial']."','".$_POST['reportes']."','".$_POST['Pendientes']."','".$_POST['agregarUsuarios']."') ";
@@ -295,8 +300,9 @@
 		$conn -> close();
 	}
 
-	function eliminar_usuario() {
-		require 'conexion.php';
+	function eliminarusuario()
+	{
+		require_once('conexion.php');
 		$sql = "DELETE FROM `permisos` WHERE `id_usuario` = '".$_POST['id_usuario']."' ";
 		if ($conn->query($sql) === true) {
 			$sql1 = "DELETE FROM `usuarios` WHERE `id` = '".$_POST['id_usuario']."' ";
@@ -306,10 +312,11 @@
 		}else {
 			echo 'no se puedo eliminar';
 		}
-	};
+	}
 
-	function verUsuarios() {
-		require "conexion.php";
+	function verUsuarios()
+	{
+		require_once('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$_POST['id']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -323,8 +330,9 @@
 		echo $usuariosJson;
 	}
 
-	function verPermisos() {
-		require "conexion.php";
+	function verPermisos()
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `permisos` WHERE `id_usuario` = '".$_POST['id_usuario']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
