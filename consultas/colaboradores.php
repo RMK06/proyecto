@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	function todosColaboradores()
 	{
@@ -29,7 +29,8 @@
 		$conn->close();
 	}
 
-	function cargo_por_id($a) {
+	function cargoporid($a)
+	{
 		require_once('conexion.php');
 		$sql = "SELECT * FROM `cargos` WHERE `id` = $a ";
 		$result = $conn->query($sql);
@@ -41,6 +42,7 @@
 		}
 	}
 
-	function usuarioId() {
+	function usuarioId()
+	{
 		echo 123;
 	}
