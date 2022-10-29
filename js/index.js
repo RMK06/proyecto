@@ -507,7 +507,7 @@ let datosIngresos = {
     ],// Color del borde
     borderWidth: 1,// Ancho del borde
 };
-new Chart($graf, {
+	Chart($graf, {
     type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
     data: {
         labels: etique,
