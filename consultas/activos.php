@@ -36,7 +36,7 @@
 		if (isset($_POST['id'])) {
 			print_r ($_POST);
 		}
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `activos` WHERE `id` = ".$a." ";
 		echo $sql;
 		$result = $conn->query($sql);
@@ -51,7 +51,7 @@
 	
 
 	function estado_id($a) {//Consultar estado del colaborador por medio del id
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * from `estado_activo` WHERE `id` = $a";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -63,7 +63,7 @@
 	}
 
 	function detalle() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `activos` WHERE `id` = '".$_POST['id']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -79,6 +79,6 @@
 	}
 
 	function agregar_mov() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		print_r($_POST);
 	}

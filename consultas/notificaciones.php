@@ -1,11 +1,11 @@
 <?php 
-	require 'conexion.php';
+	require_once ('conexion.php');
 	if (isset($_POST['metodo'])) {
 		$_POST['metodo']();
 	} 
 
 	function all_notificaciones() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `notificaciones` ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -20,7 +20,7 @@
 	}
 
     function contarNotificaciones() {
-        require 'conexion.php';
+        require_once ('conexion.php');
         $sql = "SELECT COUNT(*) FROM `notificaciones`";
         $result = $conn->query($sql);
 		if ($result->num_rows > 0) {

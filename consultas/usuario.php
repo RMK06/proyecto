@@ -1,11 +1,11 @@
 <?php 
-	require 'conexion.php';
+	require_once ('conexion.php');
 	if (isset($_POST['metodo'])) {
 		$_POST['metodo']();
 	} 
 
 	function c_Usuarios() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `estado` = 1";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -20,7 +20,7 @@
 	}
 			
 	function enviar_id($a) {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = ".$a." ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {

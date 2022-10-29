@@ -1,7 +1,7 @@
 <?php 
 
 function c_login(){
-	include_once 'conexion.php';
+	require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `loguedado`";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {

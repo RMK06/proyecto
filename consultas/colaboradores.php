@@ -1,7 +1,7 @@
 <?php 
 
 	function todos_colaboradores() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `acceso` = 0 ";
 		$result = $conn->query($sql); 
 		if ($result->num_rows > 0) {
@@ -14,7 +14,7 @@
 	}
 
 	function tColaboradores() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` ";
 		$result = $conn->query($sql); 
 		if ($result->num_rows > 0) {
@@ -27,7 +27,7 @@
 	}
 
 	function cargo_por_id($a) {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `cargos` WHERE `id` = $a ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
