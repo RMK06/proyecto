@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
-	require '../necesario/estructura.php';
-	require '../consultas/usuario.php';
+	require_once '../necesario/estructura.php';
+	require_once '../consultas/usuario.php';
 	
 	$controlador = new controlador();
 	$usuarios = todos_usuarios();
@@ -11,20 +11,23 @@
 	?>
 		<title>Administrador | Inventory Control Co</title>
 	<?php
-	if (count($usuarios) > 0) {
+	if (!empty($usuarios) > 0) {
 		?>
 
 			<div class="panel" id="panel" style="padding: 15px;">
 				<div class="col s12 no-padding">
 					<h5 class="titulo" style="position: relative;">
-						<b>Usuarios existentes</b>
-						<i class="fa-solid fa-circle-plus"></i>
+						<strong>Usuarios existentes</strong>
+						<em class="fa-solid fa-circle-plus"></em>
 
 					</h5>
-					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>
+					<div class="col s12 center hide-on-large-only subtitulo">
+						<- Deslize hacía los lados para ver todos los datos ->
+					</div>
 				</div>
 				<div class="col s12 no-padding" style="overflow-x: auto;overflow-y: hidden;">
 					<table class="striped highlight">
+						<caption></caption>
 						<thead>
 							<tr>
 								<th class="center">Nombre</th>
@@ -36,7 +39,8 @@
 						</thead>
 						<tbody>
 							<?php
-								for ($i=1; $i < count($usuarios) ; $i++) { 
+								for ($i=1; $i<count($usuarios); $i++)
+								{
 									?>
 										<tr class="data-table" data-id="<?php echo $usuarios[$i]['id']; ?>">
 											<td class="center"><?php echo $usuarios[$i]['nombre'] ?></td>
@@ -44,16 +48,23 @@
 											<td class="center"><?php echo $usuarios[$i]['correo'] ?></td>
 											
 											<td class="center">
-												<?php 
+												<?php
 													$id_cargo_a = cargos_id_admin($usuarios[$i]['cargo']);
-													for ($j=0; $j < count($id_cargo_a) ; $j++) { 
+													for ($j=0; $j<count($id_cargo_a); $j++)
+													{
 														echo $id_cargo_a[$j]['nombre'];
 													}
 												?>
 											</td>
 											<td class="center">
-												<a href="actualizar_usuario.php?active=<?php echo $active; ?>&id=<?php echo $usuarios[$i]['id']; ?>"><i style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons actualizar_usuario" data-id="<?php echo $usuarios[$i]['id']; ?>">loop</i></a>
-												<i style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $usuarios[$i]['id']; ?>">delete</i>
+												<a href="actualizar_usuario.php?active=<?php echo $active; ?>
+												&id=<?php echo $usuarios[$i]['id']; ?>">
+												<em style="font-size: 25px; font-weight: 500;"
+												class="icon-ro material-icons actualizar_usuario"
+												data-id="<?php echo $usuarios[$i]['id']; ?>">loop</em></a>
+												<em style="font-size: 25px; font-weight: 500;"
+												class="icon-ro material-icons eliminar_usuario"
+												data-id="<?php echo $usuarios[$i]['id']; ?>">delete</em>
 											</td>
 										</tr>
 									<?php
