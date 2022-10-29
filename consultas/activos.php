@@ -20,7 +20,7 @@
 	}
 
 	function activosId($a) {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `activos` WHERE `id` = ".$a." ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
