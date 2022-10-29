@@ -332,7 +332,7 @@
 
 	function verPermisos()
 	{
-		include_once('conexion.php');
+		require_once('conexion.php');
 		$sql = "SELECT * FROM `permisos` WHERE `id_usuario` = '".$_POST['id_usuario']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
