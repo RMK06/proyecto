@@ -7,7 +7,7 @@
 	
 
 	function allActivos() {
-		require 'conexion.php';
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `activos` ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
