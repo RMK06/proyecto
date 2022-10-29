@@ -8,7 +8,7 @@
             <div class="col l12 m12 s12">
                 <div class="col l12">
                     <p class="center white-text">Inicio<a href="#!" class=" waves-circle  btn-floating secondary-content tooltipped" data-position="left" data-tooltip="Cerrar sesion">
-                        <i class="material-icons">exit_to_app</i>
+                        <em class="material-icons">exit_to_app</em>
                     </a></p>
                   
                    
@@ -23,19 +23,19 @@
                         <div class="col l12 m12 s12 grey lighten-3 tarjeta1">   
                             <p>Activos en uso</p>
 
-                            <span>18<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+                            <span>18<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
                         </div>
                     </div>
                     <div class="col l4 m4 s6">
                         <div class="col l12 m12 s12 grey lighten-3 tarjeta1">   
                             <p>Total trabajadores</p>
-                            <span>125<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+                            <span>125<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
                         </div>
                     </div>
                     <div class="col l4 m4 s6">
                         <div class="col l12 m12 s12 grey lighten-3 tarjeta1">   
                             <p>Cambios en la pagina</p>
-                            <span>18<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+                            <span>18<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
                         </div>
                     </div>
             </div>
@@ -74,6 +74,7 @@
                         <div class="col l12 m12 grey lighten-3 tarjeta3">
                             <span>Historial</span>
                          <table>
+                            <caption>New York City Marathon Results 2013</caption>
                             <thead>
                              <tr>
                               <th>ID</th>
@@ -124,7 +125,7 @@
                                 
                                 <div class="card-stacked">
                                   <div class="card-content blue" style="border-radius: 20px;">
-                                     <i class="material-icons" style="color: white; font-size: 45px;">account_circle</i>
+                                     <em class="material-icons" style="color: white; font-size: 45px;">account_circle</em>
                                   </div>
                                   <div class="card-action">
                                    <p>Usuarios en linea</p>
