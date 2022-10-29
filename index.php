@@ -19,7 +19,7 @@
                                 <div class="row">
                                     <div class="center logo_login">
                                         <img class="responsive-img img-login"
-                                        src="almacenamiento/INVENTORY CONTRO_CO.png" draggable="false">
+                                        src="almacenamiento/INVENTORY CONTRO_CO.png" alt="" draggable="false">
                                     </div>
                                 </div>
                                 <div class="row">
