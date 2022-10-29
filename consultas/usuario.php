@@ -1,10 +1,13 @@
-<?php 
+<?php
 	require_once ('conexion.php');
+	$mensajeError = 'No se ha podido crear el cargo ';
+
 	if (isset($_POST['metodo'])) {
 		$_POST['metodo']();
-	} 
+	}
 
-	function c_Usuarios() {
+	function cUsuarios()
+	{
 		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `estado` = 1";
 		$result = $conn->query($sql);
@@ -14,12 +17,13 @@
 				array_push($array,$row);
 			}
 			return $array;
-		}else{
+		}else {
 			return array();
 		}
 	}
 			
-	function enviar_id($a) {
+	function enviarid($a)
+	{
 		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = ".$a." ";
 		$result = $conn->query($sql);
@@ -33,13 +37,15 @@
 
 	}
 	
-	function recibir_dato($a) {
+	function recibirdato($a)
+	{
 		return $a;
 	}
 	
 	
-	function todos_usuarios() {
-		require 'conexion.php';
+	function todosusuarios()
+	{
+		require_once ('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `acceso` = 1";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -48,7 +54,7 @@
 				array_push($array,$row);
 			}
 			return $array;
-		}else{
+		}else {
 			return array();
 		}
 	}
@@ -73,38 +79,43 @@
 	{
 		include_once('conexion.php');
 		$sql = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `contrasena`, `logueado`)
-		VALUES ('".$_POST['nombre']."','".$_POST['apellido']."','".$_POST['correo']."',
-		'".password_hash($_POST['contrasena'], PASSWORD_DEFAULT)."', '0')";
+			VALUES ('".$_POST['nombre']."','".$_POST['apellido']."','".$_POST['correo']."',
+			'".password_hash($_POST['contrasena'], PASSWORD_DEFAULT)."', '0')";
 		$result = $conn->query($sql);
 		if ($result === true) {
-			$ultimo_id = mysqli_insert_id($conn);
+			mysqli_insert_id($conn);
 			echo 1;
 		} else {
 			echo  'error'.mysqli_error($conn);
 		}
 
-		$sql2 = "INSERT INTO `permisos` (`id_usuario`, `activos`, `activos_asignados`, `empleados`, `historial`, `reportes`) VALUES ('".$ultimo_id."', '".$_POST['activos']."', '".$_POST['activos_asigandos']."', '".$_POST['empleados']."', '".$_POST['historial']."', '".$_POST['reportes']."')";
+		$sql2 = "INSERT INTO `permisos` (`id_usuario`, `activos`, `activos_asignados`, `empleados`, `historial`, `reportes`)
+		VALUES ('".$ultimo_id."', '".$_POST['activos']."', '".$_POST['activos_asigandos']."', '".$_POST['empleados']."',
+		'".$_POST['historial']."', '".$_POST['reportes']."')";
 		if ($conn->query($sql2) === true) {
-			
+			echo 1;
 		} else {
-			echo 'No se ha podido crear el cargo ' .mysqli_error($conn);
+			echo $mensajeError .mysqli_error($conn);
 		}
 	}
-	function c_un_usuario_id($a) {
-		require 'conexion.php';
-		$sql5 = "SELECT * FROM `usuarios` WHERE `id` = '".$a."' ";
+	function unusuarioid($a)
+	{
+		$tabla = `usuarios`;
+		include_once('conexion.php');
+		$sql5 = "SELECT * FROM $tabla WHERE `id` = '".$a."' ";
 		$result = $conn->query($sql5);
 		if ($result->num_rows > 0) {
 			$array = array();
-			while($row = $result->fetch_assoc()) {
+			while ($row = $result->fetch_assoc()) {
 				array_push($array, $row);
 			}
 			return $array;
 		}
 	}
-	function datos_actualizar() {
+	function datosactualizar()
+	{
 		print_r($_POST);
-		require 'conexion.php';
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$_POST['id']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -112,12 +123,14 @@
 			while ($row = $result->fetch_assoc() ) {
 				array_push($array,$row);
 			}
-			echo $array[0]['nombre'].','.$array[0]['nombre'].','.$array[0]['apellidos'].','.$array[0]['correo'].','.$array[0]['cedula'].','.$array[0]['celular'];
+			echo $array[0]['nombre'].','.$array[0]['nombre'].','.$array[0]['apellidos'].','.$array[0]['correo'].',
+			'.$array[0]['cedula'].','.$array[0]['celular'];
 
 		}
 	}
-	function v_colaboradores() {
-		require 'conexion.php';
+	function colaboradores()
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `acceso` = 0 " ;
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -128,13 +141,10 @@
 			return $array;
 		}
 	}
-	function btn_actualizar_usuarioss() {
-		require 'conexion.php';
-		$sql = "UPDATE `usuarios` SET ";
-	}
 
-	function cargos_id_admin($a) {
-		require 'conexion.php';
+	function cargosIdAdmin($a)
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `cargos` WHERE `id` = ".$a." ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
@@ -149,8 +159,9 @@
 		}
 	}
 
-	function todosLosCargos() {
-		require 'conexion.php';
+	function todosLosCargos()
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `cargos` ";
 		$result = $conn -> query($sql);
 		if ($result->num_rows > 0) {
@@ -162,8 +173,9 @@
 		}
 	}
 
-	function ver_usuarios($a) {
-		require 'conexion.php';
+	function verUsuarios($a)
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = $a ";
 		$result = $conn -> query($sql);
 		if ($result->num_rows > 0) {
@@ -175,8 +187,9 @@
 		}
 	}
 
-	function consultarIfc($a) {
-		require 'conexion.php';
+	function consultarIfc($a)
+	{
+		include_once('conexion.php');
 		if ($a == '') {
 			$sql = "SELECT * from `tipo_identificacion` ";
 			$result = $conn -> query($sql);
@@ -188,11 +201,12 @@
 				return $array;
 			}
 		}else {
-			$sql = "SELECT * from usuarios u INNER JOIN tipo_identificacion t on u.tipo_identificacion = t.id WHERE u.tipo_identificacion = $a ";
+			$sql = "SELECT * from usuarios u INNER JOIN tipo_identificacion t on u.tipo_identificacion = t.id
+			WHERE u.tipo_identificacion = $a ";
 			$result = $conn -> query($sql);
 			if ($result->num_rows > 0) {
 				$array = array();
-				while($row = $result->fetch_assoc() ) {
+				while ($row = $result->fetch_assoc() ) {
 					array_push($array, $row);
 				}
 				return $array;
@@ -201,20 +215,21 @@
 	}
 
 	function estadoUsuario($a) {
-		require 'conexion.php';
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `estado_empleado` WHERE `id` = $a";
 		$result = $conn->query($sql);
-		if ($result->num_rows >0) {
+		if ($result->num_rows > 0) {
 			$array = array();
 			while ($row = $result -> fetch_assoc() ) {
-				array_push($array,$row);
+				array_push($array, $row);
 			}
 			return $array;
 		}
 	}
 
-	function tEstados() {
-		require 'conexion.php';
+	function tEstados()
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `estado_empleado` ";
 		$result = $conn->query($sql);
 		if ($result->num_rows >0) {
@@ -226,8 +241,9 @@
 		}
 	}
 
-	function permisos_usuario($a) {
-		require 'conexion.php';
+	function permisosusuario($a)
+	{
+		include_once('conexion.php');
 		$sql = "SELECT * FROM `permisos` WHERE `id_usuario` = $a ";
 		$result = $conn->query($sql);
 		if ($result->num_rows >0) {
@@ -239,16 +255,23 @@
 		}
 	}
 	
-	function agregar_usuario() {
+	function agregarUsuario()
+	{
 		if (isset($_POST['metodo'])) {
-			require 'conexion.php';
+			include_once('conexion.php');
 			if ($_POST['permisos_especiales'] <> 1) {
 				//checket no seleccionado
-				$sql = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`,  `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `foto`) VALUES ('".$_POST['nombre_usuario']."','".$_POST['apellido_usuario']."','".$_POST['correo_usuario']."','1','".$_POST['tipo_identificacion']."','".$_POST['sexo']."','".$_POST['cedula_usuario']."','".$_POST['numero_usuario']."','".$_POST['direccion_usuario']."','".$_POST['barrio_usuario']."','".$_POST['localidad_usuario']."','".$_POST['cargo']."','1','0','0') ";
-				if ($conn->query($sql) === true) {
+				$sql = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`,
+				  `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`,
+				   `cargo`, `estado`, `logueado`, `foto`) VALUES ('".$_POST['nombre_usuario']."','".$_POST['apellido_usuario']."','".$_POST['correo_usuario']."','1',
+				   '".$_POST['tipo_identificacion']."','".$_POST['sexo']."','".$_POST['cedula_usuario']."',
+				   '".$_POST['numero_usuario']."','".$_POST['direccion_usuario']."',
+				   '".$_POST['barrio_usuario']."','".$_POST['localidad_usuario']."',
+				   '".$_POST['cargo']."','1','0','0') ";
+				else if ($conn->query($sql) === true) {
 					echo 1;
 				} else {
-					echo 'No se ha podido crear el cargo ' .mysqli_error($conn);
+					echo $mensajeError .mysqli_error($conn);
 				}
 			}else {
 				//checket seleccionado
@@ -262,7 +285,7 @@
 						echo 'No se ha podido crear el permiso ' .mysqli_error($conn);
 					}
 				} else {
-					echo 'No se ha podido crear el cargo ' .mysqli_error($conn);
+					echo $mensajeError .mysqli_error($conn);
 				}
 			}
 		}else {
