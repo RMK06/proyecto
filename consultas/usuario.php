@@ -53,13 +53,14 @@
 		}
 	}
 
-	function c_un_usuario_correo() {
-		include_once 'conexion.php';
-		$sql = "SELECT * FROM `usuarios` WHERE `correo` = '".$_POST['correo']."' "; 
+	function crearUsuarioCorreo()
+	{
+		include_once('conexion.php');
+		$sql = "SELECT * FROM `usuarios` WHERE `correo` = '".$_POST['correo']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			$array = array();
-			while($row = $result->fetch_assoc()) {
+			while ($row = $result->fetch_assoc()) {
 				array_push($array, $row);
 			}
 			return $array;
@@ -68,9 +69,12 @@
 		}
 	}
 
-	function c_crear_usuario() {
-		require 'conexion.php';
-		$sql = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `contrasena`, `logueado`) VALUES ('".$_POST['nombre']."','".$_POST['apellido']."','".$_POST['correo']."','".password_hash($_POST['contrasena'], PASSWORD_DEFAULT)."', '0')";
+	function crearusuario()
+	{
+		include_once('conexion.php');
+		$sql = "INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `contrasena`, `logueado`)
+		VALUES ('".$_POST['nombre']."','".$_POST['apellido']."','".$_POST['correo']."',
+		'".password_hash($_POST['contrasena'], PASSWORD_DEFAULT)."', '0')";
 		$result = $conn->query($sql);
 		if ($result === true) {
 			$ultimo_id = mysqli_insert_id($conn);
