@@ -24,14 +24,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="material-icons prefix">email</i>
-                                        <input placeholder="Ej: micorreo@gmail.com" id="correo" type="email" class="validate">
+                                        <em class="material-icons prefix">email</em>
+                                        <input placeholder="Ej: micorreo@gmail.com" id="correo" type="email"
+                                        class="validate">
                                         <label for="correo">Escriba aquí su correo electrónico:</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="material-icons prefix">lock</i>
+                                        <em class="material-icons prefix">lock</em>
                                         <input id="contrasena" type="password" class="validate">
                                         <label for="contrasena">Escriba aquí su contraseña</label>
                                         <span class="helper-text recuperar">¿Olvidó su contraseña?</span>
@@ -39,7 +40,10 @@
                                 </div>
                                 <div class="row">
                                     <div class="container">
-                                        <button class="btn-flat col s12 waves-effect waves-dark iniciar_sesion"><i class="material-icons left">exit_to_app</i>Iniciar Sesión</button>
+                                        <button class="btn-flat col s12 waves-effect
+                                            waves-dark iniciar_sesion"><em class="material-icons left">
+                                            exit_to_app</em>Iniciar Sesión
+                                        </button>
                                     </div>
                                 </div>
                             </div>
