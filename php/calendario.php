@@ -1,9 +1,12 @@
 
 <?php
-	function v_calendario() { 
+	function calendario()
+	{
 		@\session_start();
 		?>
 			<table>
+			<caption>New York City Marathon Results 2013</caption>
+
         					<thead>
          					 <tr>
             				  <th>ID</th>

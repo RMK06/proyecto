@@ -16,7 +16,7 @@
     	   borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
     	   borderWidth: 1,// Ancho del borde
 	   };
-	       new Chart($grafica, {
+	       Chart($grafica, {
     	       type: 'bar',// Tipo de gráfica
     	       data: {
                 	labels: etiquetas,
@@ -47,7 +47,7 @@
             	borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
             	borderWidth: 1,// Ancho del borde
             };
-            new Chart($gra, {
+            Chart($gra, {
                 type: 'line',// Tipo de gráfica
                 data: {
                     labels: eti,
@@ -88,7 +88,7 @@
                 ],// Color del borde
                 borderWidth: 1,// Ancho del borde
             };
-            new Chart($graf, {
+            Chart($graf, {
                 type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
                 data: {
                     labels: etique,
@@ -108,7 +108,6 @@ $(document).ready(function() {
                 $('#panel').html(response);
                 var elems = document.querySelectorAll('.tooltipped');
                 var instances = M.Tooltip.init(elems);
-                exitDelay: 0;
             }
         });
     });
@@ -200,7 +199,6 @@ $(document).ready(function() {
  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.tooltipped');
     var instances = M.Tooltip.init(elems);
-    exitDelay: 0;
       });
 
  //select

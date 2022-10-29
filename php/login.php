@@ -5,7 +5,7 @@ if (isset($_POST['metodo'])) {
 	}
 	
 	function validar_correo() {
-		require '../consultas/conexion.php';
+		require_once '../consultas/conexion.php';
 		$sql = "SELECT * FROM `usuarios` WHERE `correo` = '".$_POST['correo']."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
