@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
-	require_once('../necesario/estructura.php');
-	require '../consultas/usuario.php';
+	require_once ('../necesario/estructura.php');
+	require_once  '../consultas/usuario.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -12,7 +12,7 @@
 	<div class="panel" id="panel" style="padding: 15px;">
 			
 		<h5 class="titulo" style="position: relative;">
-			<b>Agregar Colaborador</b>						
+			<strong>  Agregar Colaborador</strong>  						
 		</h5>
 		<div class="row">
 			<br>
@@ -62,7 +62,7 @@
 					    </div>
 					</div>
 						<div class="col s1">
-							  <img class="materialboxed" width="150" src="../<?php //echo $usuario[0]['foto'] ?>">
+							  <img class="materialboxed" alt="" width="150" src="../<?php //echo $usuario[0]['foto'] ?>">
 						</div>
 						</div>
 						<div class="col s12">
@@ -100,7 +100,7 @@
 					  </div>
 					</div>
 				        <h5 class="titulo" style="position: relative;">
-							<b>Permisos especiales</b>						
+							<strong>  Permisos especiales</strong>  						
 						</h5>
 				        <p>
 					      <label>
@@ -111,17 +111,17 @@
 					    <div id="permisos_especiales_formulario">
 					    	<div class="col s12 no-padding">
 								<h5 class="titulo">
-									<b>Contraseña</b>
+									<strong>  Contraseña</strong>  
 								</h5>
 							</div>
 							<div class="col s12 no-padding">
 								<div class="input-field col s12 m6">
-									<i class="material-icons prefix">lock_open</i>
+									<em     class="material-icons prefix">lock_open</em>
 									<input id="contrasena" type="password" class="validate">
 									<label for="contrasena">Contraseña<span class="asterisco">*</span><span class="ayuda ayuda_contrasena tooltipped" data-position="bottom" data-tooltip="">?</span></label>
 								</div>
 								<div class="input-field col s12 m6">
-									<i class="material-icons prefix">lock</i>
+									<i class="material-icons prefix">lock</em>
 									<input id="repeticion" type="password" class="validate">
 									<label for="repeticion">Repetir la contraseña<span class="asterisco">*</span></label>
 								</div>
@@ -133,7 +133,7 @@
 							</div>
 							<div class="col s12 no-padding">
 								<h5 class="titulo">
-									<b>Permisos</b>
+									<strong>  Permisos</strong>  
 								</h5>
 							</div>
 							<div class="row">

@@ -1,5 +1,5 @@
 <?php
-	require '../consultas/usuario.php';
+	require_once '../consultas/usuario.php';
 	function editar_usuario() {
 		//print_r($_POST['id_usuario']);
 		$usuario_id = $_POST['id_usuario'];
@@ -53,7 +53,7 @@
 						</div>
 						<div class="col s1">
 								
-							  <img class="materialboxed" width="150" src="../<?php echo $usuario[0]['foto'] ?>">
+							  <img class="materialboxed" alt="" width="150" src="../<?php echo $usuario[0]['foto'] ?>">
 						</div>
 						</div>
 						<div class="col s12">
@@ -182,7 +182,7 @@
 						<div class="col s12 no-padding subnav-wrapper">
 							<ul class="subnav">
 								<li  class="waves-effect waves-dark tooltipped" id="ver_usuario" data-position="bottom" title="Ver usuarios" ><div>
-									<i class="material-icons" style="color: #95A5A6; margin-left: 15px;">remove_red_eye</i></div>
+									<em class="material-icons" style="color: #95A5A6; margin-left: 15px;">remove_red_eye</em></div>
 								</li> 
 								
 								<div class="divider"></div>

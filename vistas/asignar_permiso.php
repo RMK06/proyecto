@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
 	require_once('../necesario/estructura.php');
-	require '../consultas/usuario.php';
+	require_once '../consultas/usuario.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -12,10 +12,11 @@
 	<div class="panel" id="panel" style="padding: 15px;">
 		<div class="col s12 no-padding">
 			<h5 class="titulo">
-				<b>Asignar Permisos</b><br/>
+				<strong>Asignar Permisos</strong><br/>
 			</h5>
 		</div>
 		<table class="striped highlight">
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>ID</th>
@@ -36,7 +37,7 @@
 								<td><?php echo $colab[$i]['apellidos'] ?></td>
 								<td><?php echo $colab[$i]['correo'] ?></td>
 								<td>
-									<button class="waves-effect btn-flat agregar_colaborador" data-id="<?php echo $colab[$i]['id']; ?>"><i style="font-size: 25px; font-weight: 500;" class="material-icons">loop</i></button>
+									<button class="waves-effect btn-flat agregar_colaborador" data-id="<?php echo $colab[$i]['id']; ?>"><em style="font-size: 25px; font-weight: 500;" class="material-icons">loop</em></button>
 									
 								</td>
 							</tr>

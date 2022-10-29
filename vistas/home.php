@@ -1,5 +1,5 @@
 <?php 
-	require '../necesario/estructura.php';
+	require_once '../necesario/estructura.php';
 	$controlador = new controlador();
     @\session_start();
     if (isset($_SESSION['id'])){
@@ -8,7 +8,7 @@
 			<title>Bienvenido <?php echo $_SESSION['nombre'] ?></title>
 			<body>
 			  	<?php $controlador->menu() ?>
-				<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><i style="font-size: 40px;" class="material-icons">menu</i></a>
+				<a href="#" data-target="slide-out" class="sidenav-trigger hide-on-large-only"><em style="font-size: 40px;" class="material-icons">menu</em></a>
 				<div class="panel" id="panel" style="padding: 15px;">
 			  	 	<div class="row" id="panel">
 			        	<div class="col l12 m12 s12">
@@ -20,19 +20,19 @@
 				    		<div class="col l4  s12 center graf-padd">
 				    				<div class="col s12 grey lighten-3">	
 				    					<p class="text-sub">Activos en uso</p>
-				    					<span class="sub-icon">18<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+				    					<span class="sub-icon">18<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
 				    				</div>
 				    			</div>
 				    			<div class="col l4  s12 center graf-padd">
 				    				<div class="col s12 grey lighten-3">	
 				    					<p class="text-sub">Total trabajadores</p>
-				    					<span class="sub-icon">125<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+				    					<span class="sub-icon">125<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
 				    				</div>
 				    			</div>
 				    			<div class="col l4 s12 center graf-padd">
 				    				<div class="col l12 m12 s12 grey lighten-3">	
 				    					<p class="text-sub">Cambios en la pagina</p>
-				    					<span class="sub-icon">18<i class="material-icons" style="color: #239B56;">arrow_drop_up</i></span>
+				    					<span class="sub-icon">18<em class="material-icons" style="color: #239B56;">arrow_drop_up</em></span>
 				    				</div>
 				    			</div>
 				    		</div>

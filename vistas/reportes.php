@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
-	require '../consultas/asignar_activo.php';
-	require '../necesario/estructura.php';
+	require_once '../consultas/asignar_activo.php';
+	require_once '../necesario/estructura.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -9,8 +9,8 @@
 		<div class="panel" id="panel" style="padding: 15px;">
 			<div class="col s12 no-padding">
 					<h5 class="titulo">
-						<b>Reportes</b> <b class="right"><div>
-						</div></b>
+						<strong>Reportes</strong> <strong class="right"><div>
+						</div></strong>
 						
 					</h5>
 					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>
@@ -38,7 +38,7 @@
 			?>
 				<div class="col s12 no-padding">
 					<h5 class="titulo" style="position: relative;">
-						<b>Activos asignados</b>
+						<strong>Activos asignados</strong>
 						
 					</h5>
 					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>
@@ -113,7 +113,7 @@
 			?>
 				<div class="col s12 no-padding">
 					<h5 class="titulo" style="position: relative;">
-						<b>Asignar Activo</b>
+						<strong>Asignar Activo</strong>
 					</h5>
 				</div>
 				<div class="row">
@@ -200,8 +200,8 @@
 			?>
 				<div class="col s12 no-padding">
 					<h5 class="titulo">
-						<b>Reportes</b> <b class="right"><div>
-						</div></b>
+						<strong>Reportes</strong> <strong class="right"><div>
+						</div></strong>
 						
 					</h5>
 					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>

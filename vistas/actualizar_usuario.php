@@ -4,8 +4,8 @@
 		if ($_GET['id'] == '') {
 			header("Location: administrador.php?active=1");
 		} else { 
-			require '../necesario/estructura.php';
-			require '../consultas/usuario.php';
+			require_once '../necesario/estructura.php';
+			require_once '../consultas/usuario.php';
 			$controlador = new controlador();
 			$controlador->base('interno');
 			$controlador->menu();

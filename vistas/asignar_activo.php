@@ -1,9 +1,9 @@
 <?php
 	@\session_start();
-	require '../consultas/asignar_activo.php';
-	require '../consultas/usuario.php';
-	require '../consultas/activos.php';
-	require '../necesario/estructura.php';
+	require_once '../consultas/asignar_activo.php';
+	require_once '../consultas/usuario.php';
+	require_once '../consultas/activos.php';
+	require_once '../necesario/estructura.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -14,7 +14,7 @@
 			<div class="row">
 				<div class="col s12 no-padding">
                     <h5 class="titulo" style="position: relative;">
-                        <b>Asignar Activos</b>
+                        <strong>Asignar Activos</strong>
                     </h5>
                 </div>
             </div>

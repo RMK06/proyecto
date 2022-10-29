@@ -1,7 +1,7 @@
 <?php
 	@\session_start();
-	require '../consultas/asignar_activo.php';
-	require '../necesario/estructura.php';
+	require_once '../consultas/asignar_activo.php';
+	require_once '../necesario/estructura.php';
 	$controlador = new controlador();
 	$controlador->base('interno');
 	$controlador->menu();
@@ -10,8 +10,8 @@
 			<div class="col s12 no-padding">
 			<div class="col s12 no-padding">
 					<h5 class="titulo">
-						<b>PENDIENTES</b> <b class="right"><div>
-						</div></b>
+						<strong>PENDIENTES</strong> <strongb class="right"><div>
+						</div></strong>
 						
 					</h5>
 					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -></div>

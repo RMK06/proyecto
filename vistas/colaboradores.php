@@ -2,8 +2,8 @@
 	
  	@\session_start();
  	if (isset($_SESSION['id'])) {
-			require '../necesario/estructura.php';
-			require '../consultas/colaboradores.php';
+			require_once '../necesario/estructura.php';
+			require_once '../consultas/colaboradores.php';
 			$controlador = new controlador();
 			$colaboradores = todos_colaboradores();	 
 			if (count($colaboradores) > 0) {
@@ -14,11 +14,12 @@
 			<div class="panel" id="panel" style="padding: 15px;">
 				<div class="col s12 no-padding">
 					<h5 class="titulo" style="position: relative;">
-						<b>Colaboradores</b>
+						<strong>Colaboradores</strong>
 					</h5>
 					<div class="col s12 center hide-on-large-only subtitulo"><- Deslize hacía los lados para ver todos los datos -</div>
 				</div>
 						<table class="striped highlight centered">
+						<caption></caption>
 							<thead>
 								<tr>
 									<th>ID</th>
@@ -78,7 +79,7 @@
 					?> 
 						<div class="col s12 no-padding">
 							<h5 class="titulo" style="position: relative;">
-								<b>No existe ningún usuario</b>
+								<strong>No existe ningún usuario</strong>
 							</h5>
 						</div>
 					<?php
