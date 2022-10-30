@@ -9,7 +9,7 @@
             </script>
         <?php
     } else {
-            $controlador->base('externo');
+           $controlador->base('externo');
         ?>
             <div class="row">
                     <div class="col s12 l12">
@@ -53,4 +53,3 @@
         <?php
             $controlador->script('externo');
     }
-    ?> 

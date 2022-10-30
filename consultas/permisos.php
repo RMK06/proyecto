@@ -1,7 +1,8 @@
 <?php
+
     function consultarPermisos($a)
 	{
-		require_once('conexion.php');
+		require_once '../conexion.php';
 		$sql = "SELECT * FROM `permisos` WHERE `id_usuario` = '".$a."' ";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {

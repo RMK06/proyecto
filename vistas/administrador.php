@@ -4,7 +4,7 @@
 	require_once '../consultas/usuario.php';
 	
 	$controlador = new controlador();
-	$usuarios = todos_usuarios();
+	$usuarios = todosLosUsuarios();
 	$controlador->base('interno');
 	$controlador->menu();
 	$active = 1;

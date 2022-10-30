@@ -1,7 +1,8 @@
-<?php 
-
+<?php
     class controlador {
-        function public base($a) {
+        
+        public function base($a) {
+            date_default_timezone_set('America/Bogota');
             if ($a == 'interno') {
                ?>
                     <!DOCTYPE html>
@@ -11,20 +12,25 @@
                         <meta charset="utf-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <link rel="stylesheet" href="../librerias/materialize.min.css">
-                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"
+                        rel="stylesheet">
                         <link rel="stylesheet" href="../css/index.css?id=<?php echo date('d-m-Y-h-i-s');?>">
                         <link rel="stylesheet" href="../css/media_queries.css?id=<?php echo date('d-m-Y-h-i-s');?>">
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
                          <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
                         <link rel="stylesheet" type="text/css" href="../css/media_queries.css">
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                        <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
                         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-                        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
-                        <link rel="stylesheet" type="text/css" href="../css/index.css?id=<?php echo date('d-m-Y-h-i-s');?>">
-                        <link rel="stylesheet" type="text/css" href="../css/media_queries.css?id=<?php echo date('d-m-Y-h-i-s');?>"> 
+                        <link rel="stylesheet" type="text/css"
+                        href="https://fonts.googleapis.com/icon?family=Material+Icons">
+                        <link rel="stylesheet" type="text/css"
+                        href="../css/index.css?id=<?php echo date('d-m-Y-h-i-s');?>">
+                        <link rel="stylesheet" type="text/css"
+                        href="../css/media_queries.css?id=<?php echo date('d-m-Y-h-i-s');?>">
                     </head>
                 <?php
-                date_default_timezone_set('America/Bogota');
+                
             } else {
                 ?>
                     <!DOCTYPE html>
@@ -42,16 +48,16 @@
                         <link rel="stylesheet" type="text/css" href="css/media_queries.css">
                     </head>
                 <?php
-                date_default_timezone_set('America/Bogota');
             }
+           
         }
-        function script($a) {
+        public function script($a) {
             if ($a == 'interno') {
                 ?>
 
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-                 <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
-                 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
                 <script src="../js/index.js?id=<?php echo date('d-m-Y-h-i-s');?>"></script>
@@ -219,7 +225,7 @@
         }
 
         function notificaciones() {
-            require '../consultas/notificaciones.php';
+            require_once '../consultas/notificaciones.php';
             $notificaciones = all_notificaciones();
             $contarNotificacionesAll = contarNotificaciones();
             $notificacionesString = $contarNotificacionesAll[0]['COUNT(*)'];

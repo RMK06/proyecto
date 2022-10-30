@@ -43,15 +43,15 @@
 	}
 	
 	
-	function todosusuarios()
+	function todosLosUsuarios()
 	{
-		require_once ('conexion.php');
+		require 'conexion.php';
 		$sql = "SELECT * FROM `usuarios` WHERE `acceso` = 1";
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			$array = array();
 			while ($row = $result->fetch_assoc()) {
-				array_push($array,$row);
+				array_push($array, $row);
 			}
 			return $array;
 		}else {
@@ -268,7 +268,7 @@
 				   '".$_POST['numero_usuario']."','".$_POST['direccion_usuario']."',
 				   '".$_POST['barrio_usuario']."','".$_POST['localidad_usuario']."',
 				   '".$_POST['cargo']."','1','0','0') ";
-				else if ($conn->query($sql) === true) {
+				if ($conn->query($sql) === true) {
 					echo 1;
 				} else {
 					echo $mensajeError .mysqli_error($conn);
@@ -314,7 +314,7 @@
 		}
 	}
 
-	function verUsuarios()
+	/*function verUsuarios()
 	{
 		require_once('conexion.php');
 		$sql = "SELECT * FROM `usuarios` WHERE `id` = '".$_POST['id']."' ";
@@ -328,7 +328,7 @@
 		}
 		$usuariosJson = json_encode($array);
 		echo $usuariosJson;
-	}
+	}*/
 
 	function verPermisos()
 	{
