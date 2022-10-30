@@ -1,6 +1,6 @@
 <?= $this->extend('plantilla/layout') ?>
     <?= $this->section('titulo') ?>
-        hola
+        prueba
     <?= $this->endSection() ?>
     <?= $this->section('contenido') ?>
     <p class="center prueba">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi dolore
