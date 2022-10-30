@@ -78,7 +78,7 @@
             }
         }
 
-        function menu() {
+        public function menu() {
             //print_r($_SESSION); 
             require_once ("../consultas/permisos.php");
             $consultaper = consultarPermisos($_SESSION['id']);
