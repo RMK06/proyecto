@@ -18,9 +18,6 @@
     </head>
     <body>
         <?= $this->renderSection('contenido') ?>
-        <?php echo base_url(); ?>
-        
-        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.js"></script>

@@ -8,5 +8,6 @@
         dolorum obcaecati eveniet velit omnis ipsum atque, blanditiis reiciendis pariatur facere ut ipsa
         fugiat quas. Alias, ex!
     </p>
+    <i>prueba</i>
 
     <?= $this->endSection() ?>
