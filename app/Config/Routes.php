@@ -51,5 +51,5 @@ $routes->get('/', 'Home::index');
  * needing to reload it.
  */
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
-    require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
+    require_once APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
