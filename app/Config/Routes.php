@@ -53,3 +53,4 @@ $routes->get('/', 'Home::index');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require_once APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+$routes->post('ingresar', 'IniciarSesion::login');

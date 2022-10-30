@@ -17,6 +17,7 @@
         href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <body>
+        
         <?= $this->renderSection('contenido') ?>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
@@ -25,6 +26,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="<?=base_url()?>/js/index.js?id=<?php echo date('d-m-Y-h-i-s');?>"></script>
         <script type="text/javascript" src="https://unpkg.com/default-passive-events"></script>
-<script type="text/javascript">
+        <script src="<?php base_url()?>../assets/js/index.js"></script>
     </body>
   </html>

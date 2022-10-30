@@ -3,6 +3,7 @@
         Iniciar Sesion
     <?= $this->endSection() ?>
     <?= $this->section('contenido') ?>
+    <?php echo base_url() ?>
         <div class="row">
             <div class="col s12 l12">
                 <div class="col s6 l6 izquierda"></div>
@@ -29,7 +30,7 @@
                                 <span class="helper-text recuperar">¿Olvidó su contraseña?</span>
                             </div>
                             <div class="container">
-                                <button class="btn-flat col s12 waves-effect waves-dark iniciar_sesion">
+                                <button class="btn-flat col s12  iniciar_sesion">
                                     <em class="material-icons left">exit_to_app</em>Iniciar Sesión
                                 </button>
                             </div>
@@ -37,4 +38,5 @@
                 </div>
             </div>
         </div>
+        
     <?= $this->endSection() ?>
