@@ -172,7 +172,6 @@ li{
 	background: #2ECC71;
 	border-radius: 15px;
 	color: white;
-	font-height: 600;	
 }
 .danado {
 	background: #A93226;
@@ -327,7 +326,6 @@ li:hover {
     /* float: right; */
     right: 43px;
     bottom: 610px;
-    //bottom: 240px;
     position: fixed;
 	opacity: 0;
 	border-radius: 10px;
