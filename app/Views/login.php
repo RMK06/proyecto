@@ -1,6 +1,6 @@
 <?= $this->extend('plantilla/layout') ?>
     <?= $this->section('titulo') ?>
-        prueba
+        Iniciar Sesion
     <?= $this->endSection() ?>
     <?= $this->section('contenido') ?>
         <div class="row">
@@ -11,7 +11,9 @@
                         <div class="row">
                             <div class="center logo_login">
                                 <img class="responsive-img img-login" alt=""
-                                    src="almacenamiento/INVENTORY CONTRO_CO.png" draggable="false">
+                                    src="<?=base_url()?>/almacenamiento/INVENTORY CONTRO_CO.png"
+                                    draggable="false">
+                                   
                             </div>
                         </div>
                         <div class="row">
