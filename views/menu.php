@@ -30,7 +30,7 @@
                             if (isset($_GET)) {
                                 if ($_GET['active'] == 1) {
                                     $activo = 'active';
-                                } elseif ($_GET['active'] == 2){
+                                } elseif ($_GET['active'] == 2) {
                                     $activo1 = 'active';
                                 }
                             }
