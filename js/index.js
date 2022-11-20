@@ -41,75 +41,7 @@ $('.iniciar_sesion').click(function() {
 		});
 	}
 });
-//fin
-$(document).ready(function(){
-	$(".data-table").click(function(){
-		let id = $(this).attr('data-id');
-		let datos = {
-			metodo: 'verUsuarios',
-			id: id,
-		};
-		$.ajax({
-			url: '../consultas/usuario.php',
-			type: 'POST',
-			data: datos,
-			success: function(result){
-				let Modalelem = document.querySelector('.modal');
-				let instance = M.Modal.init(Modalelem);
-				instance.open();
-				let content = JSON.parse(result);
-				let id_usuario = content[0]['id'];
-				//console.log(content[0]['id']);
-				$(".nombre").val(content[0]['nombre']);
-				$(".apellidos").val(content[0]['apellidos']);
-				$(".telefono").val(content[0]['celular']);
-				let datos1 = {
-					metodo: 'verPermisos',
-					id_usuario: id_usuario,
-				};
-				$.ajax({
-					url: '../consultas/usuario.php',
-					type: 'POST',
-					data: datos1,
-					success: function(result){
-						let content = JSON.parse(result);
-						if (content[0]['activos'] == 1 ) {
-							$("#Activos").prop('checked', true);
-						} else {
-							$("#Activos").prop('checked', false);
-						} if (content[0]['activos_asignados'] == 1) {
-							$("#Asignados").prop('checked', true);
-						} else {
-							$("#Asignados").prop('checked', false);
-						}  if (content[0]['empleados'] == 1) {
-							$("#Colaboradores").prop('checked', true);
-						} else {
-							$("#Colaboradores").prop('checked', false);
-						} if (content[0]['historial'] == 1) {
-							$("#Historial").prop('checked', true);
-						} else {
-							$("#Historial").prop('checked', false);
-						} if (content[0]['reportes'] == 1) {
-							$("#Reportes").prop('checked', true);
-						} else {
-							$("#Reportes").prop('checked', false);
-						} if (content[0]['administrador'] == 1) {
-							$("#Administrador").prop('checked', true);
-						} else {
-							$("#Administrador").prop('checked', false);
-						}
-						
-						//$("#Asignados").prop('checked', false);
-	
-					}
-				});
 
-			}
-		});
-	 });
-  })
-
-//agregar movimiento
 $(".agregarMov").click(function(){
 	let id_activo = $(this).attr('data-id');
 	$("#idActivo").val(id_activo);
