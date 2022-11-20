@@ -31,6 +31,6 @@
         </div>
     </div>
 </div>
-<?php 
+<?php
     require_once 'views/footer.php';
 ?>
