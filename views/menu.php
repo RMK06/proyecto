@@ -28,26 +28,18 @@
                     <a href=""></a>
                     <?php
                         if ($consultaper[0]['administrador'] == 1) {
-                            if (isset($_GET)) {
-                                if ($_GET['active'] == 1) {
-                                    $activo = 'active';
-                                } elseif ($_GET['active'] == 2) {
-                                    $activo1 = 'active';
-                                }
-                            }
-                           
                             ?>
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo; ?>" >
-                                        <div class="collapsible-header modulos">
-                                            <em class="material-icons" style="color: #5499C7">
+                                        <div class="collapsible-header modulos espacio">
+                                            <em class="material-icons position" style="color: #5499C7">
                                                 person
-                                            </em>
-                                            Administrador<em class="material-icons right">keyboard_arrow_down</em>
+                                            </em>Administrador
+                                            <em class="material-icons right position">keyboard_arrow_down</em>
                                         </div>
-                                        <div class="collapsible-body container">
+                                        <div class="collapsible-body container ">
                                             <ul class="list__show">
-                                                <li>
+                                                <li class="espacio">
                                                     <a href="administrador.php?active=1">
                                                         <span class="list__inside">Ver usuarios</span>
                                                     </a>
@@ -72,8 +64,12 @@
                         }
                         if ($consultaper[0]['empleados'] == 1) {
                             ?>
-                                <li class="border-1"><a class="white-text" id="colaboradores">
-                                   <em class="material-icons" style="color: #58D68D">people</em>Colaboradores</a>
+                                <li>
+                                    <a class="white-text" id="colaboradores">
+                                        <em class="material-icons position" style="color: #58D68D">
+                                        people</em>
+                                        <span class="position-text">Colaboradores</span>
+                                    </a>
                                 </li>
                             <?php
                         }
@@ -81,9 +77,11 @@
                             ?>
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo1; ?>" >
-                                        <div class="collapsible-header modulos">
-                                            <em class="material-icons" style="color: #5499C7">computer</em>Activos
-                                            <em class="material-icons right">keyboard_arrow_down</em>
+                                        <div class="collapsible-header modulos espacio">
+                                            <em class="material-icons position"
+                                                style="color: #5499C7">computer
+                                            </em>Activos
+                                            <em class="material-icons right position">keyboard_arrow_down</em>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
@@ -129,7 +127,8 @@
                             ?>
                                 <li>
                                     <a class="white-text" id="pendientes" href="#!">
-                                        <em class="material-icons" style="color: #7FB3D5">check_circle</em>Pendientes
+                                        <em class="material-icons" style="color: #7FB3D5">check_circle</em>
+                                        <span class="position-text">Pendientes</span>
                                     </a>
                                 </li>
                             <?php
@@ -138,7 +137,8 @@
                             ?>
                                 <li>
                                     <a class="white-text" id="reportes" href="#!">
-                                        <em class="material-icons" style="color: #F4D03F">inventory</em>Reportes
+                                        <em class="material-icons" style="color: #F4D03F">inventory</em>
+                                        <span class="position-text">Reportes</span>
                                     </a>
                                 </li>
                             <?php
@@ -147,17 +147,20 @@
                     <li><a class="subheader">Ajustes</a></li>
                     <li>
                         <a class="white-text" href="#!">
-                            <em class="material-icons" style="color: white;">settings</em>Configuracion
+                            <em class="material-icons" style="color: white;">settings</em>
+                            <span class="position-text">Configuracion</span>
                         </a>
                     </li>
                     <li>
                         <a class="white-text" href="#!">
-                            <em class="material-icons" style="color: white;">history</em>Historial
+                            <em class="material-icons" style="color: white;">history</em>
+                            <span class="position-text">Historial</span>
                         </a>
                     </li>
                     <li>
                         <a class="white-text salir" href="#!">
-                            <em class="material-icons" style="color: white;">logout</em>Salir
+                            <em class="material-icons" style="color: white;">logout</em>
+                            <span class="position-text">Salir</span>
                         </a>
                     </li>
               </ul>

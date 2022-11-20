@@ -353,3 +353,17 @@ li:hover {
 .foto_usuario {
 	width: 60px;
 }
+
+.position {
+	line-height: 45px !important;
+}
+
+.espacio {
+	justify-content: space-around;
+
+}
+
+.position-text {
+	padding-left: 28px;
+
+}
