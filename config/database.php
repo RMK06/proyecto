@@ -1,6 +1,6 @@
 <?php
     require_once 'config.php';
-    class conexion
+    class Conexion
     {
         public static function conect()
         {

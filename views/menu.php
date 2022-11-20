@@ -1,8 +1,9 @@
 
 <?php
-  
     @\session_start();
     require_once 'cabezote.php';
+    require_once '../controllers/ValidarUsuarios.php';
+    $consultaper = ValidarPermiso::validar($_SESSION['id']);
     ?>
         <ul id="slide-out" class="sidenav sidenav-fixed">
             <li>
