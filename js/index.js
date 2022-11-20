@@ -45,7 +45,7 @@ $('.iniciar_sesion').click(function() {
 $(document).ready(function(){
 	$(".data-table").click(function(){
 		let id = $(this).attr('data-id');
-		var datos = {
+		let datos = {
 			metodo: 'verUsuarios',
 			id: id,
 		};
@@ -54,16 +54,16 @@ $(document).ready(function(){
 			type: 'POST',
 			data: datos,
 			success: function(result){
-				var Modalelem = document.querySelector('.modal');
-				var instance = M.Modal.init(Modalelem);
+				let Modalelem = document.querySelector('.modal');
+				let instance = M.Modal.init(Modalelem);
 				instance.open();
-				var content = JSON.parse(result);
+				let content = JSON.parse(result);
 				let id_usuario = content[0]['id'];
 				//console.log(content[0]['id']);
 				$(".nombre").val(content[0]['nombre']);
 				$(".apellidos").val(content[0]['apellidos']);
 				$(".telefono").val(content[0]['celular']);
-				var datos1 = {
+				let datos1 = {
 					metodo: 'verPermisos',
 					id_usuario: id_usuario,
 				};
@@ -72,7 +72,7 @@ $(document).ready(function(){
 					type: 'POST',
 					data: datos1,
 					success: function(result){
-						var content = JSON.parse(result);
+						let content = JSON.parse(result);
 						if (content[0]['activos'] == 1 ) {
 							$("#Activos").prop('checked', true);
 						} else {
@@ -111,13 +111,13 @@ $(document).ready(function(){
 
 //agregar movimiento
 $(".agregarMov").click(function(){
-	var id_activo = $(this).attr('data-id');
+	let id_activo = $(this).attr('data-id');
 	$("#idActivo").val(id_activo);
 	$("#devolucion").css('display','none');
 	$("#detalles").css('display','none');
 	$("#cambioActivo").css('display','none');
-	var Modalelem = document.querySelector('.modal');
-	var instance = M.Modal.init(Modalelem);
+	let Modalelem = document.querySelector('.modal');
+	let instance = M.Modal.init(Modalelem);
 	instance.open();
 	$("#selectMov").change(function(){
 		if ($("#selectMov").val() == 1) {
@@ -139,8 +139,8 @@ $(".agregarMov").click(function(){
 });
 
 $(".mAgregar").click(function() {
-	var id_activo = $("#idActivo").val();;
-	var data = {
+	let id_activo = $("#idActivo").val();;
+	let data = {
 		metodo: 'agregar_mov',
 		id: id_activo,
 		selectMov: $("#selectMov").val(),
@@ -156,7 +156,6 @@ $(".mAgregar").click(function() {
 		activoCambio: $("#activoCambio").val(),
 		ObsActi: $("#ObsActi").val(),
 	};
-	//console.log(data);
 	$.ajax({
 		url: "../consultas/activos.php",
 		type: 'POST',
@@ -193,9 +192,7 @@ $(".mAgregar").click(function() {
 	$(document).ready(function () {
 		//actualizar administrador
 		let pass1 = $('[name=pass1]');
-		let pass2 = $('[name=pass2]');
 		let valor1 = pass1.val();
-		let valor2 = pass2.val();
 
 		$(valor1).change(function() {
 			console.log(valor1);
@@ -206,10 +203,9 @@ $(".mAgregar").click(function() {
 		});
 			$('#actualizar_usuario_btn').click(function() {
 				console.log(123);
-				var pass1 = $('#repeticion').val()
-				var pass2 = $('#contrasena').val()
+				let pass1 = $('#repeticion').val()
 				
-				var data = {
+				let data = {
 					metodo : 'agregar_usuario',
 					permisos_especiales: $('#permisos_especiales:checked').val()?1:0,
 					nombre_usuario: $('#nombre_usuario').val(),
@@ -240,7 +236,6 @@ $(".mAgregar").click(function() {
 					metodo : 'agregar_usuario',
 					data: data,
 					success: function(result) {
-						//console.log(result);
 						if (result == 1) {
 							M.toast({html: 'Agregado Correctamente'});
 							setTimeout(function(){
@@ -263,10 +258,10 @@ $(".mAgregar").click(function() {
 			});
 		//eliminar usuario
 		$('.eliminar_usuario').click(function(){
-			var opcion = confirm("¿Esta seguro que desea eliminar este Usuario?");
+			let opcion = confirm("¿Esta seguro que desea eliminar este Usuario?");
 			if (opcion == true) {
 				let id = $(this).attr('data-id');
-				var data = {
+				let data = {
 					metodo: 'eliminar_usuario',
 					id_usuario: id,
 				}
@@ -294,9 +289,9 @@ $(".mAgregar").click(function() {
 	})
 	//asignar activos
 	$('#btn_asignar_activo').click(function() {
-		var opcion = confirm("¿Esta seguro que desea Asignar Este activo?");
+		let opcion = confirm("¿Esta seguro que desea Asignar Este activo?");
 		if (opcion == true) {
-			var data = {
+			let data = {
 				metodo: 'asignar_activo',
 				activo: $('#idActivo').val(),
 				usuario: $('#idUsuario').val(),
@@ -322,20 +317,16 @@ $(".mAgregar").click(function() {
 			})
 		}
 		
-		//console.log($('#fecha_inicio').val());
 	});
 
 //colaboradores
-	$('#colaboradores').click(function() {
-		$(location).attr('href','colaboradores.php');
-		//$('#colaboradores').css('background', '#7d60f5');
-	});
+	
 
 //activos
 	
 	$('.icono-ver-mas').click(function(){
-		id_activo = $(this).attr('data-id');
-		var datos = {
+		let id_activo = $(this).attr('data-id');
+		let datos = {
 			metodo : 'v_actualizar_usuario',
 			id: id_activo,
 			vista: 'yes',
@@ -347,7 +338,7 @@ $(".mAgregar").click(function() {
 			success: function(result) {
 				$('#container').html(result);
 				$('.modal').modal();
-				$('.activar').parent().find('label').addClass('active');
+				$('.actilet').parent().find('label').addClass('active');
 				$('.modal').modal('open');
 				
 
@@ -370,7 +361,7 @@ $(".mAgregar").click(function() {
 
 //cerrar session
 	$('.salir').click(function() {
-	var datos = { 
+	let datos = { 
 		metodo: 'cerrar',
 	};
 	$.ajax({
@@ -382,12 +373,12 @@ $(".mAgregar").click(function() {
 	}});
 });
 //fin
-var btn_salir = 0;
+let btn_salir = 0;
 	$('.salir').click(function() {
 		if (btn_salir == 0) {
 			btn_salir = 1;
 			M.toast({html: 'Cargando'});
-			var datos = {
+			let datos = {
 				metodo : 'btn_salir',
 			};
 			$.ajax({
@@ -418,168 +409,10 @@ var btn_salir = 0;
 		$(".contenido-notificaciones").css('opacity','0');
 
 	});
- document.addEventListener('DOMContentLoaded', function() {
-    let elems = document.querySelectorAll('.sidenav');
-    let instances = M.Sidenav.init(elems);
-  });
-	 // Obtener una referencia al elemento canvas del DOM
-	var $grafica = document.querySelector("#grafica");
-	// Las etiquetas son las que van en el eje X. 
-	var etiquetas = ["Enero", "Febrero", "Marzo", "Abril"]
-	// Podemos tener varios conjuntos de datos. Comencemos con uno
-	var datosVentas2020 = {
-    	label: "Ventas por mes",
-    	data: [5000, 1500, 8000, 5102], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etiquetas
-    	backgroundColor: 'rgba(54, 162, 235, 0.2)', // Color de fondo
-    	borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
-    	borderWidth: 1,// Ancho del borde
-	};
-	 new Chart($grafica, {
-    	type: 'bar',// Tipo de gráfica
-    	data: {
-        	labels: etiquetas,
-       		 datasets: [
-            datosVentas2020,
-            // Aquí más datos...
-        ]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }],
-        },
-    }
-});
-	// Obtener una referencia al elemento canvas del DOM
-	var $gra = document.querySelector("#gra");
-	// Las etiquetas son las que van en el eje X. 
-	var eti = ["Enero", "Febrero", "Marzo", "Abril"]
-	// Podemos tener varios conjuntos de datos. Comencemos con uno
-	var datos2020 = {
-    	label: "Ventas por mes",
-    	data: [4000, 1900, 8000, 5102], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de eti
-    	backgroundColor: 'rgba(60, 162, 235, 0.2)', // Color de fondo
-    	borderColor: 'rgba(54, 162, 235, 1)', // Color del borde
-    	borderWidth: 1,// Ancho del borde
-};
-new Chart($gra, {
-    type: 'line',// Tipo de gráfica
-    data: {
-        labels: eti,
-        datasets: [
-            datos2020,
-            // Aquí más datos...
-        ]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }],
-        },
-    }
-});
-// Obtener una referencia al elemento canvas del DOM
-var $graf = document.querySelector("#graf");
-// Las etiquetas son las porciones de la gráfica
-var etique = ["Ventas", "Donaciones", "Trabajos"]
-// Podemos tener varios conjuntos de datos. Comencemos con uno
-var datosIngresos = {
-    data: [1500, 400, 2000, 7000], // La data es un arreglo que debe tener la misma cantidad de valores que la cantidad de etique
-    // Ahora debería haber tantos background colors como datos, es decir, para este ejemplo, 4
-    backgroundColor: [
-        'rgba(163,221,203,0.2)',
-        'rgba(232,233,161,0.2)',
-        'rgba(230,181,102,0.2)',
-        'rgba(229,112,126,0.2)',
-    ],// Color de fondo
-    borderColor: [
-        'rgba(163,221,203,1)',
-        'rgba(232,233,161,1)',
-        'rgba(230,181,102,1)',
-        'rgba(229,112,126,1)',
-    ],// Color del borde
-    borderWidth: 1,// Ancho del borde
-};
-new Chart($graf, {
-    type: 'pie',// Tipo de gráfica. Puede ser dougnhut o pie
-    data: {
-        labels: etique,
-        datasets: [
-            datosIngresos,
-            // Aquí más datos...
-        ]
-    },
-});
+ 
 
-$(document).ready(function() {
-	$('#administrador').click(function() {
-		M.toast({html: 'Cargando'});
-		$('.panel').html('');
-		var datos = {
-			metodo : 'v_ver_bloqueadas',
-			vista : 'yes',
-		};
-		$.ajax({
-			url: "php/administrador.php",
-			async: true,
-			type: 'POST',
-			data: datos,
-			success: function(result) {
-				$('.panel').html(result);
-				M.Toast.dismissAll();
-				$('.modal').modal();
-				//clicks
-				$('.ver_usuarioIcon').click(ver_usuarioIcon);
-		}
-	});
-});
+
     
-$('#calendario').click(function() { 
-        
-        M.toast({html: 'Cargando'});
-        $('panel').html('');
-        var datos = {
-            metodo : 'v_calendario',
-            vista : 'yes',
-        };
-        $.ajax({
-            url: "php/calendario.php",
-            async: true,
-            type: 'POST',
-            data: datos,
-            success: function(result) {
-                $('#panel').html(result);
-                M.Toast.dismissAll();
-                $('.tooltipped').tooltip();
-            }
-        });
-    
-    });
-    $('#correo').on('click', function(){
-        $.ajax({
-            type: "POST",
-            url: "php/inicio.php",
-            success: function(response) {
-                $('#panel').html(response);
-            }
-        });
-    });
-    $('#usuarios').on('click', function(){
-        $.ajax({
-            type: "POST",
-            url: "php/usuarios.php",
-            success: function(response) {
-                $('#panel').html(response);
-            }
-        });
-    });
-});
 
 
 
