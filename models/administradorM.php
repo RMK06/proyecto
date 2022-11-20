@@ -22,4 +22,15 @@
             }
             return $datos;
         }
+
+        public static function buscarId($tabla, $usuario)
+        {
+            $sql = Conexion::conect()->prepare("SELECT * FROM $tabla WHERE `id` = :id");
+            $sql->bindParam(":id", $usuario, PDO::PARAM_STR);
+            $sql->execute();
+            while ($fila = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $datos[] = $fila;
+            }
+            return $datos;
+        }
     }

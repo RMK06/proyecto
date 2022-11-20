@@ -46,14 +46,17 @@
                                             ?>
                                         </td>
                                         <td class="center">
-                                            <a href="actualizar_usuario.php?active=<?php echo $active; ?>&id=<?php
+                                            <a href="actualizar_usuario.php?id=<?php
                                                 echo $usuarios[$i]['id']; ?>">
                                                 <em style="font-size: 25px; font-weight: 500;"
                                                     class="icon-ro material-icons actualizar_usuario"
                                                     data-id="<?php echo $usuarios[$i]['id']; ?>">loop
-                                            </em>
+                                                </em>
                                             </a>
-                                            <i style="font-size: 25px; font-weight: 500;" class="icon-ro material-icons eliminar_usuario" data-id="<?php echo $usuarios[$i]['id']; ?>">delete</i>
+                                            <em style="font-size: 25px; font-weight: 500;"
+                                                class="icon-ro material-icons eliminar_usuario"
+                                                data-id="<?php echo $usuarios[$i]['id']; ?>">delete
+                                            </em>
                                         </td>
                                     </tr>
                                 <?php

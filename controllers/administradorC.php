@@ -14,4 +14,11 @@
             $id = $idCargo;
             return AdministradorM::buscarCargosM($tabla, $id);
         }
+
+        public static function buscarId($idUsuario)
+        {
+            $tabla = 'usuarios';
+            $usuario = $idUsuario;
+            return AdministradorM::buscarId($tabla, $usuario);
+        }
     }
