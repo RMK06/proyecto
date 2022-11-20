@@ -1,0 +1,32 @@
+@media only screen and (max-width: 786px) {
+  .img-login {
+    max-height: 300px !important;
+    max-width: 300px !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .izquierda {
+    display: none !important;
+  }
+}
+@media (max-width: 992px) {
+    .panel {
+      height: auto;
+      margin-bottom: 20px;
+      margin-left: 20px;
+      margin-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
+      padding-top: 20px;
+      position: absolute;
+      overflow-y: auto;
+      overflow-x: auto !important;
+      width: 100%;
+      max-width: calc(100% - 40px);
+    }
+    .graf-padd {
+        padding-top: 20px !important;
+    }
+    
+}
