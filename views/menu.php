@@ -27,10 +27,10 @@
                     <a href=""></a>
                     <?php
                         if ($consultaper[0]['administrador'] == 1) {
-                            if (count($_GET) > 0) {
+                            if (isset($_GET)) {
                                 if ($_GET['active'] == 1) {
                                     $activo = 'active';
-                                }else if ($_GET['active'] == 2){
+                                } elseif ($_GET['active'] == 2){
                                     $activo1 = 'active';
                                 }
                             }
