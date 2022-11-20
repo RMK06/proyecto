@@ -10,8 +10,8 @@
         public function validarUsuario()
         {
             require_once('../models/validarUsuario.php');
-            $validar = CValidarUsuario::mValidarUsuario($_POST);
-            print_r($validar);
+            CValidarUsuario::mValidarUsuario($_POST);
+            
         }
     }
 
