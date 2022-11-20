@@ -25,7 +25,7 @@
             </li>
                     <li><a class="subheader">Aplicaciones</a></li>
                     <a href=""></a>
-                    <?php 
+                    <?php
                         if ($consultaper[0]['administrador'] == 1) {
                             if (count($_GET) > 0) {
                                 if ($_GET['active'] == 1) {
@@ -39,18 +39,27 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <i class="material-icons" style="color: #5499C7">person</i>Administrador  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">
+                                                person
+                                            </em>
+                                            Administrador<em class="material-icons right">keyboard_arrow_down</em>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
                                                 <li>
-                                                    <a href="administrador.php?active=1"><span class="list__inside">Ver usuarios</span></a> 
+                                                    <a href="administrador.php?active=1">
+                                                        <span class="list__inside">Ver usuarios</span>
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="agregar_usuario.php?active=1"><span class="list__inside">Crear colaborador</span></a> 
+                                                    <a href="agregar_usuario.php?active=1">
+                                                        <span class="list__inside">Crear colaborador</span>
+                                                    </a>
                                                 </li>
                                                 <li>
-                                                    <a href="asignar_permiso.php?active=1"><span class="list__inside">Asignar Permisos</span></a>
+                                                    <a href="asignar_permiso.php?active=1">
+                                                        <span class="list__inside">Asignar Permisos</span>
+                                                    </a>
                                                 </li>
                                                 
                                             </ul>
@@ -62,8 +71,8 @@
                         }
                         if ($consultaper[0]['empleados'] == 1) {
                             ?>
-                                <li class="border-1"><a class="white-text" id="colaboradores"> 
-                                   <i class="material-icons" style="color: #58D68D">people</i>Colaboradores</a>
+                                <li class="border-1"><a class="white-text" id="colaboradores">
+                                   <em class="material-icons" style="color: #58D68D">people</em>Colaboradores</a>
                                 </li>
                             <?php
                         }
@@ -72,31 +81,40 @@
                                 <ul class="collapsible">
                                     <li id="modulos" class="<?php echo $activo1; ?>" >
                                         <div class="collapsible-header modulos">
-                                            <i class="material-icons" style="color: #5499C7">computer</i>Activos  <i class="material-icons right">keyboard_arrow_down</i>
+                                            <em class="material-icons" style="color: #5499C7">computer</em>Activos
+                                            <em class="material-icons right">keyboard_arrow_down</em>
                                         </div>
                                         <div class="collapsible-body container">
                                             <ul class="list__show">
                                                 <li class="list__inside">
-                                                    <a href="activos.php?active=2"><span class="list__inside">Ver Activos</span></a> 
+                                                    <a href="activos.php?active=2">
+                                                        <span class="list__inside">Ver Activos</span>
+                                                    </a>
                                                 </li>
                                                 <li class="list__inside">
-                                                    <a href="activos.php?active=2"><span class="list__inside">Agregar Activos</span></a> 
+                                                    <a href="activos.php?active=2">
+                                                        <span class="list__inside">Agregar Activos</span>
+                                                    </a>
                                                 </li>
-                                                <?php 
+                                                <?php
                                                     if ($consultaper[0]['activos_asignados'] == 1) {
                                                         ?>
                                                             <li class="list__inside">
-                                                                <a href="activos_asignados.php?active=2"><span class="list__inside">Activos Asignados</span></a> 
-                                                            </li> 
+                                                                <a href="activos_asignados.php?active=2">
+                                                                    <span class="list__inside">Activos Asignados</span>
+                                                                </a>
+                                                            </li>
                                                         <?php
                                                     }
                                                 ?>
-                                                <?php 
+                                                <?php
                                                     if ($consultaper[0]['activos_asignados'] == 1) {
                                                         ?>
                                                             <li class="list__inside">
-                                                                <a href="asignar_activo.php?active=2"><span class="list__inside">Asignar Activos</span></a> 
-                                                            </li> 
+                                                                <a href="asignar_activo.php?active=2">
+                                                                    <span class="list__inside">Asignar Activos</span>
+                                                                </a>
+                                                            </li>
                                                         <?php
                                                     }
                                                 ?>
@@ -109,22 +127,38 @@
                         if ($consultaper[0]['pendientes'] == 1) {
                             ?>
                                 <li>
-                                    <a class="white-text" id="pendientes" href="#!"> <i class="material-icons" style="color: #7FB3D5">check_circle</i>Pendientes</a>
+                                    <a class="white-text" id="pendientes" href="#!">
+                                        <em class="material-icons" style="color: #7FB3D5">check_circle</em>Pendientes
+                                    </a>
                                 </li>
                             <?php
                         }
                         if ($consultaper[0]['reportes'] == 1) {
                             ?>
                                 <li>
-                                    <a class="white-text" id="reportes" href="#!"> <i class="material-icons" style="color: #F4D03F">inventory</i>Reportes</a>
+                                    <a class="white-text" id="reportes" href="#!">
+                                        <em class="material-icons" style="color: #F4D03F">inventory</em>Reportes
+                                    </a>
                                 </li>
                             <?php
                         }
                     ?>
                     <li><a class="subheader">Ajustes</a></li>
-                    <li><a class="white-text" href="#!"> <i class="material-icons" style="color: white;">settings</i>Configuracion</a></li>
-                    <li><a class="white-text" href="#!"> <i class="material-icons" style="color: white;">history</i>Historial</a></li>
-                    <li><a class="white-text salir" href="#!"> <i class="material-icons" style="color: white;">logout</i>Salir</a></li>
+                    <li>
+                        <a class="white-text" href="#!">
+                            <em class="material-icons" style="color: white;">settings</em>Configuracion
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text" href="#!">
+                            <em class="material-icons" style="color: white;">history</em>Historial
+                        </a>
+                    </li>
+                    <li>
+                        <a class="white-text salir" href="#!">
+                            <em class="material-icons" style="color: white;">logout</em>Salir
+                        </a>
+                    </li>
               </ul>
     <?php
     require_once 'footer.php';
