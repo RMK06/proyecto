@@ -7,7 +7,9 @@
         <ul id="slide-out" class="sidenav sidenav-fixed">
             <li>
                 <div class="user-view">
-                    <a href="#user"><img class="circle" src="https://images.pexels.com/photos/6533803/pexels-photo-6533803.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></a>
+                    <a href="#user">
+                        <img class="circle" alt="" src="../almacenamiento/fotos_usuarios/usuario.jpg">
+                    </a>
                     <a href="#name">
                         <span class="white-text name">
                             <?php echo $_SESSION['nombre'];?>  <?php echo $_SESSION['apellidos']; ?>
@@ -16,7 +18,11 @@
                     <a href="#email"><span class="white-text email"><?php echo $_SESSION['correo'] ?></span></a>
                 </div>
             </li>
-                    <li><a class="boton white-text" id="correo"> <i class="material-icons" style="color: white">home</i>Home</a></li>
+            <li>
+                <a class="boton white-text" id="correo">
+                    <em class="material-icons" style="color: white">home</em>Home
+                </a>
+            </li>
                     <li><a class="subheader">Aplicaciones</a></li>
                     <a href=""></a>
                     <?php 
