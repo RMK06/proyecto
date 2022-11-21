@@ -145,37 +145,49 @@
 								<div class="col s12">
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="activos"  <?php echo $permisos[0]['activos'] == 1 ? 'checked': ''; ?>  />
+											<input type="checkbox" class="filled-in" id="activos"
+                                                <?php echo $permisos[0]['activos'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Activos</span>
 										</label>
 									</div>
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="activos_asigandos" <?php echo $permisos[0]['activos_asignados'] == 1 ? 'checked': ''; ?> />
+											<input type="checkbox" class="filled-in" id="activos_asigandos"
+                                                <?php echo $permisos[0]['activos_asignados'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Activos Asignados</span>
 										</label>
 									</div>
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="empleados" <?php echo $permisos[0]['empleados'] == 1 ? 'checked': ''; ?>  />
+											<input type="checkbox" class="filled-in" id="empleados"
+                                                <?php echo $permisos[0]['empleados'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Colaboradores</span>
 										</label>
 									</div>
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="historial" <?php echo $permisos[0]['historial'] == 1 ? 'checked': ''; ?> />
+											<input type="checkbox" class="filled-in" id="historial"
+                                                <?php echo $permisos[0]['historial'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Historial</span>
 										</label>
 									</div>
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="usuarios"  <?php echo $permisos[0]['administrador'] == 1 ? 'checked': ''; ?>/>
+											<input type="checkbox" class="filled-in" id="usuarios"
+                                                <?php echo $permisos[0]['administrador'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Administrador</span>
 										</label>
 									</div>
 									<div class="col s4">
 										<label>
-											<input type="checkbox" class="filled-in" id="reportes" <?php echo $permisos[0]['reportes'] == 1 ? 'checked': ''; ?> />
+											<input type="checkbox" class="filled-in" id="reportes"
+                                                <?php echo $permisos[0]['reportes'] == 1 ? 'checked': ''; ?>
+                                            />
 											<span>Reportes</span>
 										</label>
 									</div>

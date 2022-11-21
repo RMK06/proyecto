@@ -131,7 +131,7 @@ $(".mAgregar").click(function() {
 		});
 		
 		$('#actualizarBtn').click(function() {
-			
+			alert(123);
 		});
 			$('#actualizar_usuario_btn').click(function() {
 				console.log(123);
