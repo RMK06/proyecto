@@ -21,4 +21,24 @@
             $usuario = $idUsuario;
             return AdministradorM::buscarId($tabla, $usuario);
         }
+
+        public static function busquedAll($id, $tabla)
+        {
+            $idCargo = $id;
+            $table = $tabla;
+            return AdministradorM::busquedAllM($idCargo, $table);
+        }
+
+        public static function all($tabla)
+        {
+            $table = $tabla;
+            return AdministradorM::allM($table);
+        }
+
+        public static function cargoIdC($idUsuario)
+        {
+            $id = $idUsuario;
+            $table = 'permisos';
+            return AdministradorM::cargoIdM($table, $id);
+        }
     }

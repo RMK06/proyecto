@@ -31,12 +31,26 @@
 										</div>
 
 										<div class="input-field col s3">
+                                            <?php
+                            
+                                                if ($usuario[0]['tipo_identificacion'] == 1) {
+                                                    $tipoDocumento = 'Cedula Ciudadana';
+                                                }elseif ($usuario[0]['tipo_identificacion'] == 2) {
+                                                    $tipoDocumento = 'Pep';
+                                                }elseif ($usuario[0]['tipo_identificacion'] == 3) {
+                                                    $tipoDocumento = 'Pasaporte';
+                                                }elseif ($usuario[0]['tipo_identificacion'] == 4) {
+                                                    $tipoDocumento = 'Registro Civil';
+                                                }
+                                            ?>
                                             <select>
-                                            <option value="" disabled selected>[SELECCIONE]</option>
-                                            <option value="1">Cedula Ciudadana</option>
-                                            <option value="2">Pep</option>
-                                            <option value="3">Pasaporte</option>
-                                            <option value="4">Registro Civil</option>
+                                                <option value="<?php echo $tipoDocumento ?>"
+                                                    disabled selected><?php echo $tipoDocumento ?>
+                                                </option>
+                                                <option value="1">Cedula Ciudadana</option>
+                                                <option value="2">Pep</option>
+                                                <option value="3">Pasaporte</option>
+                                                <option value="4">Registro Civil</option>
                                             </select>
 											<label>Tipo de documento</label>
 										</div>
@@ -89,14 +103,14 @@
 									</div>
 									<div class="col s12 edi_usuario">Estado y Puesto del usuario</div>
 									<div class="input-field col s6" style="padding-top: 8px;">
-										<?php 
-											$cargos = cargos_id_admin($usuario[0]['cargo']);
+										<?php
+											$cargos = AdministradotC::busquedAll($usuario[0]['cargo'], 'cargos');
 										?>
 										<select>
 											<option  disabled selected><?php echo $cargos[0]['nombre'] ?></option>
-											<?php 
-												$t_cargos = todosLosCargos();
-												for ($i=0; $i <count($t_cargos) ; $i++) { 
+											<?php
+												$t_cargos = AdministradotC::all('cargos');
+												for ($i=0; $i <count($t_cargos) ; $i++) {
 													?>
 														<option value="1"><?php echo $t_cargos[$i]['nombre'] ?></option>
 													<?php
@@ -106,30 +120,27 @@
 										<label style="padding-top: 15px;">Cargo</label>
 									</div>
 									<div class="input-field col s6" style="padding-top: 8px;">
-										<?php 
-											$estado_usuario = estadoUsuario($usuario[0]['estado']);
-											//print_r($estado_usuario);
-										?>
+										<?php
+                                            if ($usuario[0]['estado'] == 1) {
+                                                $estado = 'Activo';
+                                            } else {
+                                                $estado = 'Inactivo';
+                                            }
+                                        ?>
 										<select>
-											<option value="" disabled selected><?php echo $estado_usuario[0]['estado'] ?></option>
-											<?php
-												$t_estados = tEstados();
-												for ($i=0; $i <count($t_estados) ; $i++) { 
-													?>
-														<option value="<?php $t_estados[$i]['id'] ?>"><?php echo $t_estados[$i]['estado'] ?></option>
-													<?php
-												}
-											?>
-											
-											
-										</select>
+											<option
+                                                value="<?php echo $usuario[0]['estado'] ?>"
+                                                disabled selected><?php echo $estado ?>
+                                            </option>
+                                            <option value="1">Activo</option>
+                                            <option value="2">Inactivo</option>
+                                        </select>
 										<label style="padding-top: 15px;">Estado</label>
 									</div>
 								</div>
 								<div class="col s12 edi_usuario">Permisos</div>
 								<?php
-									$permisos = permisos_usuario($usuario[0]['id']);
-									//print_r($permisos);
+									$permisos = AdministradotC::cargoIdC($usuario[0]['id'], 'permisos');
 								?>
 								<div class="col s12">
 									<div class="col s4">
