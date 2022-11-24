@@ -108,35 +108,49 @@ $(".mAgregar").click(function() {
 		$('.modal').modal('open');
 	});
 
+	
 	$(document).ready(function () {
 		$("#permisos_especiales_formulario").css('display','none');
 		$( '#permisos_especiales' ).on( 'click', function() {
 		    if( $(this).is(':checked') ){
-		        // Hacer algo si el checkbox ha sido seleccionado
 		        $("#permisos_especiales_formulario").css('display','block');
+				let pass1 = $('[name=pass1]');
+				let pass2 = $('[name=pass2]');
+				let confirmacion = "Las contraseñas si coinciden";
+				let negacion = "No coinciden las contraseñas";
+				let vacio = "La contraseña no puede estar vacía";
+				let span = $('<span></span>').insertAfter(pass2);
+				span.hide();
+				function coincidePassword(){
+					let valor1 = pass1.val();
+					let valor2 = pass2.val();
+					span.show().removeClass();
+					if(valor1 != valor2){
+						span.text(negacion).addClass('negacion');	
+					}
+					if(valor1.length==0 || valor1==""){
+						span.text(vacio).addClass('negacion');	
+					}
+					if(valor1.length!=0 && valor1==valor2){
+						span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
+					}
+				}
+				pass2.keyup(function(){
+					coincidePassword();
+					AgregarDatos();
+				});
 		    } else {
-		        // Hacer algo si el checkbox ha sido deseleccionado
 		        $("#permisos_especiales_formulario").css('display','none');
 		    }
-		});
-	})
 
-	$(document).ready(function () {
-		//actualizar administrador
-		let pass1 = $('[name=pass1]');
-		let valor1 = pass1.val();
-
-		$(valor1).change(function() {
-			console.log(valor1);
+				function AgregarDatos() {
+					$(document).on("click", "#actualizar_usuario_btn", function AgregarDatos() {
+						console.log(123);
+					});
+				}
 		});
 		
-		$('#actualizarBtn').click(function() {
-			alert(123);
-		});
 			$('#actualizar_usuario_btn').click(function() {
-				console.log(123);
-				let pass1 = $('#repeticion').val()
-				
 				let data = {
 					metodo : 'agregar_usuario',
 					permisos_especiales: $('#permisos_especiales:checked').val()?1:0,
@@ -151,7 +165,6 @@ $(".mAgregar").click(function() {
 					barrio_usuario: $('#barrio_usuario').val(),
 					localidad_usuario: $('#localidad_usuario').val(),
 					cargo: $('#selectCargo').val(),
-					pass: pass1,
 					activos: $('#activos:checked').val()?1:0,
 					activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
 					empleados: $('#empleados:checked').val()?1:0,
