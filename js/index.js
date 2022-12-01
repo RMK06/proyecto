@@ -111,96 +111,116 @@ $(".mAgregar").click(function() {
 	
 	$(document).ready(function () {
 		$("#permisos_especiales_formulario").css('display','none');
-		$( '#permisos_especiales' ).on( 'click', function() {
+		$( '#permisos_especiales' ).click(function() {
 		    if( $(this).is(':checked') ){
 		        $("#permisos_especiales_formulario").css('display','block');
-				let pass1 = $('[name=pass1]');
-				let pass2 = $('[name=pass2]');
-				let confirmacion = "Las contraseñas si coinciden";
-				let negacion = "No coinciden las contraseñas";
-				let vacio = "La contraseña no puede estar vacía";
-				let span = $('<span></span>').insertAfter(pass2);
-				span.hide();
-				function coincidePassword(){
-					let valor1 = pass1.val();
-					let valor2 = pass2.val();
-					span.show().removeClass();
-					if(valor1 != valor2){
-						span.text(negacion).addClass('negacion');	
-					}
-					if(valor1.length==0 || valor1==""){
-						span.text(vacio).addClass('negacion');	
-					}
-					if(valor1.length!=0 && valor1==valor2){
-						span.text(confirmacion).removeClass("negacion").addClass('confirmacion');
-					}
-				}
-				pass2.keyup(function(){
-					coincidePassword();
-					AgregarDatos();
-				});
 		    } else {
 		        $("#permisos_especiales_formulario").css('display','none');
 		    }
-
-				function AgregarDatos() {
-					$(document).on("click", "#actualizar_usuario_btn", function AgregarDatos() {
-						console.log(123);
-					});
-				}
+			
 		});
-		
-			$('#actualizar_usuario_btn').click(function() {
-				let data = {
-					metodo : 'agregar_usuario',
-					permisos_especiales: $('#permisos_especiales:checked').val()?1:0,
-					nombre_usuario: $('#nombre_usuario').val(),
-					apellido_usuario: $('#apellido_usuario').val(),
-					numero_usuario: $('#numero_usuario').val(),
-					tipo_identificacion: $('#tipo_identificacion').val(),
-					cedula_usuario: $('#cedula_usuario').val(),
-					sexo: $('#sexo').val(),
-					correo_usuario: $('#correo_usuario').val(),
-					direccion_usuario: $('#direccion_usuario').val(),
-					barrio_usuario: $('#barrio_usuario').val(),
-					localidad_usuario: $('#localidad_usuario').val(),
-					cargo: $('#selectCargo').val(),
-					activos: $('#activos:checked').val()?1:0,
-					activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
-					empleados: $('#empleados:checked').val()?1:0,
-					historial: $('#historial:checked').val()?1:0,
-					usuarios: $('#usuarios:checked').val()?1:0,
-					reportes: $('#reportes:checked').val()?1:0,
-					Pendientes: $('#Pendientes:checked').val()?1:0,
-					agregarUsuarios: $('#agregarUsuarios:checked').val()?1:0,
-				
-				};
-				$.ajax({
-					url: "../consultas/usuario.php",
-					type: 'POST',
-					metodo : 'agregar_usuario',
-					data: data,
-					success: function(result) {
-						if (result == 1) {
-							M.toast({html: 'Agregado Correctamente'});
-							setTimeout(function(){
-								location.reload();
-							},2000);
-						}else if(result == 2) {
-							M.toast({html: 'Ususario con permisos Especiales ha sido creado Correctamente'});
-							setTimeout(function(){
-								location.reload();
-							},2000);
-						}else {
-							M.toast({html: 'No se agrego, Revise los datos nuevamente'});
-						}
-
+		$('#correo_usuario').change(function(){
+			let data = {
+				correo: $('#correo_usuario').val(),
+			}
+			$.ajax({
+				url: '../controllers/administradorC.php',
+				type: 'POST',
+				data: data,
+				success: function(result) {
+					if (result == 1) {
+						M.toast({html: 'Ya hay un correo creado'});
+						$('#correo_usuario').focus();
+						$('#correo_usuario').val('');
 					}
-				})
-				
-				
-				
-			});
+				}
+			})
+		})
+		
+		$('#cedula_usuario').change(function(){
+			let data = {
+				numero_usuario: $('#cedula_usuario').val(),
+			}
+			$.ajax({
+				url: '../controllers/administradorC.php',
+				type: 'POST',
+				data: data,
+				success: function(result) {
+					if (result == 1) {
+						M.toast({html: 'Ya hay una Cedula con este numero'});
+						$('#cedula_usuario').focus();
+						$('#cedula_usuario').val('');
+					}
+				}
+			})
+		})
+
+		$('#actualizar_usuario_btn').click(function(){
+			if ($('#cedula_usuario').val() == "" || $('#cedula_usuario').val() == " ") {
+				M.toast({html: 'Llenar Campo de numero de cedula'});
+				$('#cedula_usuario').focus();
+			} else if($('#correo_usuario').val() == "" || $('#correo_usuario').val() == " ") {
+				M.toast({html: 'Llenar Campo de numero de Correo'});
+				$('#correo_usuario').focus();
+			}else if($('#nombre_usuario').val() == "" || $('#nombre_usuario').val() == " ") {
+				M.toast({html: 'Se require el nombre'});
+				$('#nombre_usuario').focus();
+			}else {
+				datausuarios();
+			}
+		});
+
+		function datausuarios() {
+			let data = {
+				metodo : 'agregar_usuario',
+				permisos_especiales: $('#permisos_especiales:checked').val()?1:0,
+				nombre_usuario: $('#nombre_usuario').val(),
+				apellido_usuario: $('#apellido_usuario').val(),
+				numero_usuario: $('#numero_usuario').val(),
+				tipo_identificacion: $('#tipo_identificacion').val(),
+				cedula_usuario: $('#cedula_usuario').val(),
+				sexo: $('#sexo').val(),
+				correo_usuario: $('#correo_usuario').val(),
+				direccion_usuario: $('#direccion_usuario').val(),
+				barrio_usuario: $('#barrio_usuario').val(),
+				localidad_usuario: $('#localidad_usuario').val(),
+				cargo: $('#selectCargo').val(),
+				activos: $('#activos:checked').val()?1:0,
+				activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
+				empleados: $('#empleados:checked').val()?1:0,
+				historial: $('#historial:checked').val()?1:0,
+				usuarios: $('#usuarios:checked').val()?1:0,
+				reportes: $('#reportes:checked').val()?1:0,
+				Pendientes: $('#Pendientes:checked').val()?1:0,
+				agregarUsuarios: $('#agregarUsuarios:checked').val()?1:0,
+			};
+			$.ajax({
+				url: "../consultas/usuario.php",
+				type: 'POST',
+				metodo : 'agregar_usuario',
+				data: data,
+				success: function(result) {
+					if (result == 1) {
+						M.toast({html: 'Agregado Correctamente'});
+						setTimeout(function(){
+							location.reload();
+						},2000);
+					}else if(result == 2) {
+						M.toast({html: 'Ususario con permisos Especiales ha sido creado Correctamente'});
+						setTimeout(function(){
+							location.reload();
+						},2000);
+					}else {
+						M.toast({html: 'No se agrego, Revise los datos nuevamente'});
+						console.log(data);
+					}
+
+				}
+			})
+			
+			
+			
+		};
 		//eliminar usuario
 		$('.eliminar_usuario').click(function(){
 			let opcion = confirm("¿Esta seguro que desea eliminar este Usuario?");

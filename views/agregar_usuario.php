@@ -108,7 +108,7 @@
                             <div class="col s12 no-padding">
                                 <div class="input-field col s12 m6">
                                     <em class="material-icons prefix">lock_open</em>
-                                    <input id="contrasena" name="pass1" type="password" class="validate">
+                                    <input id="contrasena" type="password" class="validate">
                                     <label for="contrasena">Contraseña<span class="asterisco">
                                         <span class="ayuda ayuda_contrasena tooltipped"
                                             data-position="bottom" data-tooltip="">?
@@ -117,7 +117,7 @@
                                 </div>
                                 <div class="input-field col s12 m6">
                                     <em class="material-icons prefix">lock</em>
-                                    <input id="repeticion" name="pass2" type="password" class="validate">
+                                    <input id="repeticion" type="password" class="validate">
                                     <label for="repeticion">
                                         Repetir la contraseña<span class="asterisco">*</span>
                                     </label>

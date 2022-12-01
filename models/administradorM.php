@@ -65,4 +65,34 @@
             }
             return $datos;
         }
+
+        public static function validarDocumento($table, $doc)
+        {
+            $sql = Conexion::conect()->prepare("SELECT * FROM $table WHERE `cedula` = :cedula");
+            $sql->bindParam(":cedula", $doc, PDO::PARAM_STR);
+            $sql->execute();
+            while ($fila = $sql->fetchAll(PDO::FETCH_ASSOC)) {
+                $datos[] = $fila;
+            }
+            if (isset($datos)) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+        }
+
+        public static function validarCorreo($table, $correo)
+        {
+            $sql = Conexion::conect()->prepare("SELECT * FROM $table WHERE `correo` = :correo");
+            $sql->bindParam(":correo", $correo, PDO::PARAM_STR);
+            $sql->execute();
+            while ($fila = $sql->fetchAll(PDO::FETCH_ASSOC)) {
+                $datos[] = $fila;
+            }
+            if (isset($datos)) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+        }
     }
