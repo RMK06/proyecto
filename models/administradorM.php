@@ -76,8 +76,6 @@
             }
             if (isset($datos)) {
                 echo 1;
-            } else {
-                echo 2;
             }
         }
 
@@ -91,8 +89,38 @@
             }
             if (isset($datos)) {
                 echo 1;
+            }
+        }
+
+        public static function agregarUsuarioM($table, $datos)
+        {
+            if ($datos['permisos_especiales'] <> 1) {
+				//checket no seleccionado
+                $sql = Conexion::conect()->prepare("INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`,  `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `foto`) VALUES ('".$datos['nombre_usuario']."','".$datos['apellido_usuario']."','".$datos['correo_usuario']."','0','".$datos['tipo_identificacion']."','".$datos['sexo']."','".$datos['cedula_usuario']."','".$datos['numero_usuario']."','".$datos['direccion_usuario']."','".$datos['barrio_usuario']."','".$datos['localidad_usuario']."','".$datos['cargo']."','1','0','0') ");
+                if ($sql->execute() == true) {
+                    echo 1;
+                } else {
+                    echo 2;
+                }
+			}else {
+				//checket seleccionado
+				$sql = Conexion::conect()->prepare("INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`, `contrasena`, `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `codigo`, `foto`) VALUES ('".$datos['nombre_usuario']."','".$datos['apellido_usuario']."','".$datos['correo_usuario']."','1','".password_hash($datos['pass'], PASSWORD_DEFAULT)."','".$datos['tipo_identificacion']."','".$datos['sexo']."','".$datos['cedula_usuario']."','".$datos['numero_usuario']."','".$datos['direccion_usuario']."','".$datos['barrio_usuario']."','".$datos['localidad_usuario']."','".$datos['cargo']."','1','0','0','0') ");
+				if ($sql->execute() === true) {
+					$ultimo_id = $sql->lastInsertId();
+					echo $ultimo_id;
+				} else {
+					echo 'No se ha podido crear el cargo ' .mysqli_error($conn);
+				}
+			}
+        }
+
+        public static function eliminarUsuarioM($table, $id)
+        {
+            $sql = Conexion::conect()->prepare("DELETE FROM $table WHERE id = :id");
+            $sql->bindParam(":id", $id['id_usuario'], PDO::PARAM_STR);
+            if ($sql->execute()) {
+                echo 1;
             } else {
-                echo 2;
             }
         }
     }

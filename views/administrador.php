@@ -31,7 +31,8 @@
                     <?php
                         if (isset($usuarios)) {
                             for ($i=1; $i < count($usuarios) ; $i++) {
-                                ?>
+                                if ($usuarios[$i]['acceso'] == 1) {
+                                    ?>
                                     <tr class="data-table" data-id="<?php echo $usuarios[$i]['id']; ?>">
                                         <td class="center"><?php echo $usuarios[$i]['nombre'] ?></td>
                                         <td class="center"><?php echo $usuarios[$i]['apellidos'] ?></td>
@@ -60,6 +61,8 @@
                                         </td>
                                     </tr>
                                 <?php
+                                }
+                                
                             }
                         }else {
                             echo ' no hay datos';

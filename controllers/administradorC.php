@@ -56,6 +56,20 @@
             $datos = $this->validarC;
             return AdministradorM::validarCorreo($table, $datos);
         }
+
+        public function agregarUsuario()
+        {
+            $table = 'usuarios';
+            $datos = $this->agregarUsuario;
+            return AdministradorM::agregarUsuarioM($table, $datos);
+        }
+
+        public function eliminarUsuario()
+        {
+            $table = 'usuarios';
+            $id = $this->eliminarUsuario;
+            return AdministradorM::eliminarUsuarioM($table, $id);
+        }
     }
     if (isset($_POST['numero_usuario'])) {
         $valUsuario = new AdministradotC();
@@ -66,4 +80,16 @@
         $valUsuario = new AdministradotC();
         $valUsuario -> validarC = $_POST['correo'];
         $valUsuario -> validarCorreo();
+    }
+
+    if (isset($_POST['nombre_usuario'])) {
+        $valUsuario = new AdministradotC();
+        $valUsuario -> agregarUsuario = $_POST;
+        $valUsuario -> agregarUsuario();
+    }
+
+    if (isset($_POST['id_usuario'])) {
+        $idEliminar = new AdministradotC();
+        $idEliminar -> eliminarUsuario = $_POST;
+        $idEliminar -> eliminarUsuario();
     }

@@ -188,6 +188,7 @@ $(".mAgregar").click(function() {
 				activos: $('#activos:checked').val()?1:0,
 				activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
 				empleados: $('#empleados:checked').val()?1:0,
+				pass: $('#contrasena').val(),
 				historial: $('#historial:checked').val()?1:0,
 				usuarios: $('#usuarios:checked').val()?1:0,
 				reportes: $('#reportes:checked').val()?1:0,
@@ -195,11 +196,12 @@ $(".mAgregar").click(function() {
 				agregarUsuarios: $('#agregarUsuarios:checked').val()?1:0,
 			};
 			$.ajax({
-				url: "../consultas/usuario.php",
+				url: "../controllers/administradorC.php",
 				type: 'POST',
 				metodo : 'agregar_usuario',
 				data: data,
 				success: function(result) {
+					console.log(result);
 					if (result == 1) {
 						M.toast({html: 'Agregado Correctamente'});
 						setTimeout(function(){
@@ -212,7 +214,6 @@ $(".mAgregar").click(function() {
 						},2000);
 					}else {
 						M.toast({html: 'No se agrego, Revise los datos nuevamente'});
-						console.log(data);
 					}
 
 				}
@@ -227,11 +228,10 @@ $(".mAgregar").click(function() {
 			if (opcion == true) {
 				let id = $(this).attr('data-id');
 				let data = {
-					metodo: 'eliminar_usuario',
 					id_usuario: id,
 				}
 				$.ajax({
-					url: "../consultas/usuario.php",
+					url: "../controllers/administradorC.php",
 					type: 'POST',
 					data: data,
 					success: function(result) {

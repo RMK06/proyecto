@@ -49,12 +49,6 @@
                                                         <span class="list__inside">Crear colaborador</span>
                                                     </a>
                                                 </li>
-                                                <li>
-                                                    <a href="asignar_permiso.php?active=1">
-                                                        <span class="list__inside">Asignar Permisos</span>
-                                                    </a>
-                                                </li>
-                                                
                                             </ul>
                                         </div>
                                     </li>
@@ -65,7 +59,7 @@
                         if ($consultaper[0]['empleados'] == 1) {
                             ?>
                                 <li>
-                                    <a class="white-text" id="colaboradores">
+                                    <a href="colaboradores.php" class="white-text" id="colaboradores">
                                         <em class="material-icons position" style="color: #58D68D">
                                         people</em>
                                         <span class="position-text">Colaboradores</span>

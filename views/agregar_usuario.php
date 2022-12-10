@@ -69,7 +69,7 @@
                                         }
                                     ?>
                                 </select>
-                                <label>Tipo de documento</label>
+                                <label>Cargos</label>
                             </div>
                             <div class="input-field col s9">
                                 <input id="correo_usuario" type="text" class="validate">
