@@ -100,17 +100,6 @@
                                                         <?php
                                                     }
                                                 ?>
-                                                <?php
-                                                    if ($consultaper[0]['activos_asignados'] == 1) {
-                                                        ?>
-                                                            <li class="list__inside">
-                                                                <a href="asignar_activo.php?active=2">
-                                                                    <span class="list__inside">Asignar Activos</span>
-                                                                </a>
-                                                            </li>
-                                                        <?php
-                                                    }
-                                                ?>
                                             </ul>
                                         </div>
                                     </li>
