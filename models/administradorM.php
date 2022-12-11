@@ -66,7 +66,7 @@
             return $datos;
         }
 
-        public static function validarDocumento($table, $doc)
+        public static function validarDocumentoM($table, $doc)
         {
             $sql = Conexion::conect()->prepare("SELECT * FROM $table WHERE `cedula` = :cedula");
             $sql->bindParam(":cedula", $doc, PDO::PARAM_STR);

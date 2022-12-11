@@ -48,7 +48,7 @@
         {
             $table = 'usuarios';
             $datos = $this->validarD;
-            return AdministradorM::validarDocumento($table, $datos);
+            return AdministradorM::validarDocumentoM($table, $datos); 
         }
         public function validarCorreo()
         {
@@ -94,6 +94,3 @@
         $idEliminar -> eliminarUsuario();
     }
 
-    if (isset($_POST['tipoDocumento'])) {
-        echo 123;
-    }
