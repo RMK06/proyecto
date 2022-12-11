@@ -26,10 +26,22 @@
             $datos = $this->datosActivo;
             return ActivosM::agregarActivoM($tabla, $datos);
         }
+
+        public function deleteActivo()
+        {
+            $tabla = 'activos';
+            $datos = $this->id_activo;
+            return ActivosM::deleteActivoM($tabla, $datos);
+        }
     }
 
     if (isset($_POST['Serial'])) {
         $agregarA = new ActivosC();
         $agregarA -> datosActivo = $_POST;
         $agregarA -> agregarActivo();
+    }
+    if (isset($_POST['id_activo'])) {
+        $deletactivo = new ActivosC();
+        $deletactivo -> id_activo = $_POST;
+        $deletactivo -> deleteActivo();
     }

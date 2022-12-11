@@ -344,6 +344,30 @@ $(".mAgregar").click(function() {
 		}
 	});
 	
+	$('.borrarActivo').click(function(){
+		
+		let opcion = confirm("¿Esta seguro que desea eliminar este Usuario?");
+			if (opcion) {
+				let idActivo = $(this).attr("data-id");
+				let data = {
+					id_activo: idActivo,
+				}
+				$.ajax({
+					url: "../controllers/activosC.php",
+					type: 'POST',
+					data: data,
+					success: function(result) {
+						if (result == 1) {
+							M.toast({html: 'Se elimino el Activo'});
+							location.reload();
+						} else if(result == 2) {
+							M.toast({html: 'No se logro elimnar el activo'});
+						}
+					}
+				})
+			}
+		
+	});
 
 	//asignar activos
 	$('#btn_asignar_activo').click(function() {

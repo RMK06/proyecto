@@ -38,4 +38,16 @@
             }
 
         }
+
+        public static function deleteActivoM($tabla, $datos)
+        {
+            $sql = Conexion::conect()->prepare("DELETE FROM $tabla WHERE id = :id");
+            $sql->bindParam(":id", $datos['id_activo'], PDO::PARAM_STR);
+            if ($sql->execute()) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+
+        }
     }

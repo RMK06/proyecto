@@ -73,12 +73,12 @@
                                                 
                                                 <em class="material-icons borrar_bloqueada  waves-dark
                                                     tooltipped icono-eliminar"
-                                                    data-id="<?php echo $usuarios[$i]['id']; ?>"
+                                                    data-id="<?php echo $activos[$i]['id']; ?>"
                                                     data-position="bottom" data-tooltip="Editar">loop
                                                 </em>
-                                                <em class="material-icons borrar_bloqueada  waves-dark
+                                                <em class="material-icons borrarActivo  waves-dark
                                                     tooltipped icono-eliminar"
-                                                    data-id="<?php echo $usuarios[$i]['id']; ?>"
+                                                    data-id="<?php echo $activos[$i]['id']; ?>"
                                                     data-position="bottom" data-tooltip="Eliminar">delete
                                                 </em>
                                             </td>
