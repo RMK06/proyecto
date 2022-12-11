@@ -96,8 +96,9 @@
         {
             if ($datos['permisos_especiales'] <> 1) {
 				//checket no seleccionado
-                $sql = Conexion::conect()->prepare("INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`,  `tipo_identificacion`, `sexo`, `cedula`, `celular`, `direccion`, `barrio`, `localidad`, `cargo`, `estado`, `logueado`, `foto`) VALUES ('".$datos['nombre_usuario']."','".$datos['apellido_usuario']."','".$datos['correo_usuario']."','0','".$datos['tipo_identificacion']."','".$datos['sexo']."','".$datos['cedula_usuario']."','".$datos['numero_usuario']."','".$datos['direccion_usuario']."','".$datos['barrio_usuario']."','".$datos['localidad_usuario']."','".$datos['cargo']."','1','0','0') ");
-                if ($sql->execute() == true) {
+                $sql = Conexion::conect()->prepare("INSERT INTO `usuarios`(`nombre`, `apellidos`, `correo`, `acceso`, `cedula`, `celular`, `cargo`, `estado`, `logueado`, `codigo`, `tipo_identificacion`, `direccion`, `barrio`, `localidad`, `sexo`, `foto`)
+                VALUES('".$datos['nombre_usuario']."','".$datos['apellido_usuario']."','".$datos['correo_usuario']."','0','".$datos['cedula_usuario']."','".$datos['numero_usuario']."','".$datos['cargo']."','1','0','0','".$datos['tipo_identificacion']."','".$datos['direccion_usuario']."','".$datos['barrio_usuario']."','".$datos['localidad_usuario']."','".$datos['sexo']."','0') ");
+                if ($sql->execute()) {
                     echo 1;
                 } else {
                     echo 2;

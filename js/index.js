@@ -201,7 +201,6 @@ $(".mAgregar").click(function() {
 				metodo : 'agregar_usuario',
 				data: data,
 				success: function(result) {
-					console.log(result);
 					if (result == 1) {
 						M.toast({html: 'Agregado Correctamente'});
 						setTimeout(function(){
@@ -252,6 +251,37 @@ $(".mAgregar").click(function() {
 		})
 			
 	})
+
+	$('#actualizarBtn').click(function() {
+		let data = {
+			nombre_usuario: $('#nombre_usuario').val(),
+			apellido_usuario: $('#apellido_usuario').val(),
+			numero_usuario: $('#numero_usuario').val(),
+			tipoDocumento: $('#tipoDocumento').val(),
+			sexo: $('#sexo').val(),
+			correo_usuario: $('#correo_usuario').val(),
+			direccion_usuario: $('#direccion_usuario').val(),
+			barrio_usuario: $('#barrio_usuario').val(),
+			localidad_usuario: $('#localidad_usuario').val(),
+			cargo_select: $('#cargo_select').val(),
+			estado: $('#estado').val(),
+			activos: $('#activos:checked').val()?1:0,
+			activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
+			empleados: $('#empleados:checked').val()?1:0,
+			usuarios: $('#usuarios:checked').val()?1:0,
+			reportes: $('#reportes:checked').val()?1:0,
+		}
+		$.ajax({
+			url: "../controllers/administradorC.php",
+			type: 'POST',
+			data: data,
+			success: function(result) {
+				console.log(result);
+				
+			}
+		})
+	});
+
 	//asignar activos
 	$('#btn_asignar_activo').click(function() {
 		let opcion = confirm("¿Esta seguro que desea Asignar Este activo?");
@@ -284,7 +314,7 @@ $(".mAgregar").click(function() {
 		
 	});
 
-//colaboradores
+
 	
 
 //activos

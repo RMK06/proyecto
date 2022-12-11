@@ -93,3 +93,7 @@
         $idEliminar -> eliminarUsuario = $_POST;
         $idEliminar -> eliminarUsuario();
     }
+
+    if (isset($_POST['tipoDocumento'])) {
+        echo 123;
+    }

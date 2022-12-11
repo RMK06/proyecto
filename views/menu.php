@@ -1,7 +1,6 @@
 
 <?php
     @\session_start();
-    require_once 'cabezote.php';
     require_once '../controllers/ValidarUsuarios.php';
     $consultaper = ValidarPermiso::validar($_SESSION['id']);
     ?>
@@ -106,16 +105,7 @@
                                 </ul>
                             <?php
                         }
-                        if ($consultaper[0]['pendientes'] == 1) {
-                            ?>
-                                <li>
-                                    <a class="white-text" id="pendientes" href="#!">
-                                        <em class="material-icons" style="color: #7FB3D5">check_circle</em>
-                                        <span class="position-text">Pendientes</span>
-                                    </a>
-                                </li>
-                            <?php
-                        }
+
                         if ($consultaper[0]['reportes'] == 1) {
                             ?>
                                 <li>
@@ -148,4 +138,3 @@
                     </li>
               </ul>
     <?php
-    require_once 'footer.php';
