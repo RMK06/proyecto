@@ -369,37 +369,7 @@ $(".mAgregar").click(function() {
 		
 	});
 
-	//asignar activos
-	$('#btn_asignar_activo').click(function() {
-		let opcion = confirm("¿Esta seguro que desea Asignar Este activo?");
-		if (opcion == true) {
-			let data = {
-				metodo: 'asignar_activo',
-				activo: $('#idActivo').val(),
-				usuario: $('#idUsuario').val(),
-				observaciones: $('#texDetalles').val(),
-				cantidad: $('#cantidadInv').val(),
-				ubicacion: $('#ubicacionInv').val(),
-				fecha_incio: $('#fecha_inicio').val(),
-				fecha_fin: $('#fecha_fin').val(),
-			}
-			$.ajax({
-				url: "../consultas/asignar_activo.php",
-				type: 'POST',
-				data: data,
-				success: function(result) {
-					console.log(result);
-					if (result == 1) {
-						M.toast({html: 'Se asigno el activo Correctamente'});
-						setTimeout(function(){
-							location.reload();
-						},2000);
-					}
-				}
-			})
-		}
-		
-	});
+	
 
 
 	
@@ -407,26 +377,30 @@ $(".mAgregar").click(function() {
 //activos
 	
 	$('.icono-ver-mas').click(function(){
-		let id_activo = $(this).attr('data-id');
-		let datos = {
-			metodo : 'v_actualizar_usuario',
-			id: id_activo,
-			vista: 'yes',
-		};
+		$('#Detalles').parent().find('label').addClass('active');
+		let id = $(this).attr("data-id");
+		let data = {
+			idActivo: id,
+		}
 		$.ajax({
-			url: "activos.php",
-			type: 'POST',
-			data: datos,
-			success: function(result) {
-				$('#container').html(result);
-				$('.modal').modal();
-				$('.actilet').parent().find('label').addClass('active');
-				$('.modal').modal('open');
+			data: data,
+			type: "POST",
+			url: "../controllers/activosC.php",
+			success:function(result) {
+				let content = JSON.parse(result);
+				$("#Nombre").val(content[0]['nombre']);
+				$("#Serial").val(content[0]['serial']);
+				$("#Placa").val(content[0]['placa']);
+				$("#Tipo").val(content[0]['tipo']);
+				$("#Marca").val(content[0]['marca']);
+				$("#Precio").val(content[0]['precio']);
+				$("#Detalles").val(content[0]['detalles']);
+				let Modalelem = document.querySelector('.modal');
+				let instance = M.Modal.init(Modalelem);
+				instance.open();
 				
-
-				console.log(result);
 			}
-		})
+		});
 	});
 
 

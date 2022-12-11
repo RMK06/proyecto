@@ -50,4 +50,16 @@
             }
 
         }
+
+        public static function allActivoM($tabla, $datos)
+        {
+            $sql = Conexion::conect()->prepare("SELECT * FROM $tabla WHERE `id` = :id");
+            $sql->bindParam(":id", $datos['idActivo'], PDO::PARAM_STR);
+            $sql->execute();
+            while ($fila = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $datos[] = $fila;
+            }
+            echo json_encode($datos);
+        }
+
     }

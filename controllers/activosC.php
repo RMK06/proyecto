@@ -39,6 +39,13 @@
             $datos = $this->id_activo;
             return ActivosM::deleteActivoM($tabla, $datos);
         }
+
+        public function allActivo()
+        {
+            $tabla = 'activos';
+            $datos = $this->activo;
+            return ActivosM::allActivoM($tabla, $datos);
+        }
     }
 
     if (isset($_POST['Serial'])) {
@@ -50,4 +57,10 @@
         $deletactivo = new ActivosC();
         $deletactivo -> id_activo = $_POST;
         $deletactivo -> deleteActivo();
+    }
+
+    if (isset($_POST['idActivo'])) {
+        $idActivo = new ActivosC();
+        $idActivo -> activo = $_POST;
+        $idActivo -> allActivo();
     }

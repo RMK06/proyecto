@@ -67,19 +67,18 @@
                                                     <em class="material-icons borrar_bloqueada
                                                         waves-dark  tooltipped icono-eliminar icono-ver-mas"
                                                         data-id="<?php echo $activos[$i]['id']; ?>"
-                                                        data-position="bottom" data-tooltip="Ver más">
-                                                        open_in_new
-                                                </em>
-                                                
-                                                <em class="material-icons borrar_bloqueada  waves-dark
-                                                    tooltipped icono-eliminar"
-                                                    data-id="<?php echo $activos[$i]['id']; ?>"
-                                                    data-position="bottom" data-tooltip="Editar">loop
+                                                        data-position="bottom" data-tooltip="Ver o editar">
+                                                        edit
                                                 </em>
                                                 <em class="material-icons borrarActivo  waves-dark
                                                     tooltipped icono-eliminar"
                                                     data-id="<?php echo $activos[$i]['id']; ?>"
                                                     data-position="bottom" data-tooltip="Eliminar">delete
+                                                </em>
+                                                <em class="material-icons borrarActivo  waves-dark
+                                                    tooltipped icono-eliminar"
+                                                    data-id="<?php echo $activos[$i]['id']; ?>"
+                                                    data-position="bottom" data-tooltip="Asignar">timeline
                                                 </em>
                                             </td>
 
@@ -96,13 +95,58 @@
             ?>
                 <div class="col s12 no-padding">
                     <h5 class="titulo" style="position: relative;">
-                        <b>No existe ningún activo</b>
+                        <strong>No existe ningún activo</strong>
                     </h5>
                 </div>
             <?php
         }
     ?>
 </div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <div class="row">
+            <div class="col s12 no-padding">
+                <h5 class="titulo" style="position: relative;">
+                    <strong>Ver o editar Activos</strong>
+                </h5>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" id="Nombre" type="text" class="validate">
+                <label class="active" for="Nombre">Nombre</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" id="Serial" type="text" class="validate">
+                <label class="active" for="Serial">Serial</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" id="Placa" type="text" class="validate">
+                <label class="active" for="Placa">Placa</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" id="Tipo" type="text" class="validate">
+                <label class="active" for="Tipo">Tipo</label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="" id="Marca" type="text" class="validate">
+                <label class="active" for="Marca">Marca</label>
+            </div>
+            <div class="input-field col s6">
+                <input  placeholder="" id="Precio" type="text" class="validate">
+                <label class="active" for="Precio">Precio</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="Detalles" class="materialize-textarea"></textarea>
+                <label  for="Detalles">Detalles</label>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+</div>
+
 <?php
     require_once 'footer.php';
 ?>
