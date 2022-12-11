@@ -124,12 +124,7 @@
                             <span class="position-text">Configuracion</span>
                         </a>
                     </li>
-                    <li>
-                        <a class="white-text" href="#!">
-                            <em class="material-icons" style="color: white;">history</em>
-                            <span class="position-text">Historial</span>
-                        </a>
-                    </li>
+                    
                     <li>
                         <a class="white-text salir" href="#!">
                             <em class="material-icons" style="color: white;">logout</em>
