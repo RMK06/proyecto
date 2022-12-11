@@ -48,7 +48,7 @@
         {
             $table = 'usuarios';
             $datos = $this->validarD;
-            return AdministradorM::validarDocumentoM($table, $datos); 
+            AdministradorM::validarDocumentoM($table, $datos);
         }
         public function validarCorreo()
         {
