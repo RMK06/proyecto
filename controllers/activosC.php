@@ -14,6 +14,12 @@
             return ActivosM::allActivos($tabla);
         }
 
+        public static function activoId($id)
+        {
+            $tabla = 'activos';
+            return ActivosM::idColaboradorM($tabla, $id);
+        }
+
         public static function idColaborador($id)
         {
             $tabla = 'usuarios';
