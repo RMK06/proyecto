@@ -59,9 +59,9 @@
 								<div class="input-field col s2">
 									<select id="sexo">
 										<option value="<?php echo $usuario[0]['sexo'] ?>"><?php echo $usuario[0]['sexo'];  ?></option>
-										<option value="1">Mujer</option>
-										<option value="2">Hombre</option>
-										<option value="3">No binario</option>
+										<option value="Mujer">Mujer</option>
+										<option value="Hombre">Hombre</option>
+										<option value="No binario">No binario</option>
 									</select>
 									<label>Sexo</label>
 								</div>
@@ -105,7 +105,7 @@
 								?>
 								
 								<select id="cargo_select">
-									<option><?php echo $cargos[0]['nombre'] ?></option>
+									<option value="<?php echo $cargos[0]['id'] ?>"><?php echo $cargos[0]['nombre'] ?></option>
 									<?php
 										$t_cargos = AdministradotC::all('cargos');
 										for ($i=0; $i <count($t_cargos) ; $i++) {
@@ -186,7 +186,9 @@
 						</div>
 					</form>
 					<div class="col s12 center" style="padding-top: 60px;">
-						<div class=" btn-flat blue white-text center actualizarBtn" id="actualizarBtn">Actualizar</div>
+						<div class=" btn-flat blue white-text center actualizarBtn"
+							data-id="<?php echo $_GET['id'] ?>" id="actualizarBtn">Actualizar
+						</div>
 					</div>
 				</div>
 			</div>

@@ -253,7 +253,9 @@ $(".mAgregar").click(function() {
 	})
 
 	$('#actualizarBtn').click(function() {
+		let idUsuario = $(this).attr("data-id");
 		let data = {
+			id: idUsuario,
 			nombre_usuario: $('#nombre_usuario').val(),
 			apellido_usuario: $('#apellido_usuario').val(),
 			numero_usuario: $('#numero_usuario').val(),
@@ -265,6 +267,7 @@ $(".mAgregar").click(function() {
 			localidad_usuario: $('#localidad_usuario').val(),
 			cargo_select: $('#cargo_select').val(),
 			estado: $('#estado').val(),
+			cedula_usuario: $('#cedula_usuario').val(),
 			activos: $('#activos:checked').val()?1:0,
 			activos_asigandos: $('#activos_asigandos:checked').val()?1:0,
 			empleados: $('#empleados:checked').val()?1:0,
@@ -272,11 +275,15 @@ $(".mAgregar").click(function() {
 			reportes: $('#reportes:checked').val()?1:0,
 		}
 		$.ajax({
-			url: "../controllers/administradorC.php",
+			url: "../controllers/colaboradoresC.php",
 			type: 'POST',
 			data: data,
 			success: function(result) {
-				console.log(result);
+				if (result == 1) {
+					M.toast({html: 'El usuario se ha editado correectamente'});
+				} else if(result == 2) {
+					M.toast({html: 'El usuario No se logro editar'});
+				}
 				
 			}
 		})
