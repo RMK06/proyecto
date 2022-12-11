@@ -27,7 +27,7 @@
         {
             $sql = Conexion::conect()->prepare("INSERT INTO $tabla(`nombre`, `serial`, `placa`, `tipo`, `marca`,
                                                 `precio`, `detalles`, `estado`, `uso`)
-                                                VALUES ('".$datos['Nombre']."','".$datos['Serial']."'
+                                                VALUES ('".$datos['Nombre']."','".$datos['SerialActivo']."'
                                                 ,'".$datos['Placa']."', '".$datos['Tipo']."',
                                                 '".$datos['Marca']."','".$datos['Precio']."',
                                                 '".$datos['Detalles']."','1','1') ");
@@ -60,6 +60,24 @@
                 $datos[] = $fila;
             }
             echo json_encode($datos);
+        }
+
+        public static function updateActivoM($tabla, $datos)
+        {
+            $sql1 = Conexion::conect()->prepare("UPDATE $tabla SET
+                                                `nombre` = '".$datos['Nombre']."',
+                                                `serial` = '".$datos['Serial']."',
+                                                `placa` = '".$datos['Placa']."',
+                                                `tipo` = '".$datos['Tipo']."',
+                                                `marca` = '".$datos['Marca']."',
+                                                `precio` = '".$datos['Precio']."',
+                                                `detalles` = '".$datos['Detalles']."'
+                                                WHERE `id` = '".$datos['Activo']."' ");
+            if ($sql1->execute()) {
+                echo 1;
+            } else {
+                echo 2;
+            }
         }
 
     }

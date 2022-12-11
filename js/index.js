@@ -320,7 +320,7 @@ $(".mAgregar").click(function() {
 		} else {
 			let data = {
 				Nombre: $('#Nombre').val(),
-				Serial: $('#Serial').val(),
+				SerialActivo: $('#Serial').val(),
 				Placa: $('#Placa').val(),
 				Tipo: $('#Tipo').val(),
 				Marca: $('#Marca').val(),
@@ -388,6 +388,8 @@ $(".mAgregar").click(function() {
 			url: "../controllers/activosC.php",
 			success:function(result) {
 				let content = JSON.parse(result);
+				let id = content['id'];
+				$("#idActi").val(content[0]['id']);
 				$("#Nombre").val(content[0]['nombre']);
 				$("#Serial").val(content[0]['serial']);
 				$("#Placa").val(content[0]['placa']);
@@ -398,7 +400,32 @@ $(".mAgregar").click(function() {
 				let Modalelem = document.querySelector('.modal');
 				let instance = M.Modal.init(Modalelem);
 				instance.open();
-				
+				$('#actualizarActivo').click(function(){
+					let activoId = $("#idActi").val();
+					let data = {
+						Activo: activoId,
+						Nombre: $("#Nombre").val(),
+						Serial: $("#Serial").val(),
+						Placa: $("#Placa").val(),
+						Tipo: $("#Tipo").val(),
+						Marca: $("#Marca").val(),
+						Precio: $("#Precio").val(),
+						Detalles: $("#Detalles").val(),
+					}
+					$.ajax({
+						url: "../controllers/activosC.php",
+						type: 'POST',
+						data: data,
+						success: function(result) {
+							console.log(result);
+							if (result == 1) {
+								M.toast({html: 'Se ha actualizado el Activo'});
+							} else if(result == 2) {
+								M.toast({html: 'No se logro Actualizar el activo'});
+							}
+						}
+					})
+				});
 			}
 		});
 	});

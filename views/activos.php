@@ -112,6 +112,7 @@
                     <strong>Ver o editar Activos</strong>
                 </h5>
             </div>
+            <input type="text" id="idActi" hidden>
             <div class="input-field col s6">
                 <input placeholder="" id="Nombre" type="text" class="validate">
                 <label class="active" for="Nombre">Nombre</label>
@@ -143,7 +144,8 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+      <div class="btn" id="actualizarActivo">Actualizar</div>
     </div>
 </div>
 

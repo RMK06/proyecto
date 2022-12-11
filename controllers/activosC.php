@@ -46,9 +46,16 @@
             $datos = $this->activo;
             return ActivosM::allActivoM($tabla, $datos);
         }
+
+        public function updateActivo()
+        {
+            $tabla = 'activos';
+            $datos = $this->updateActivo;
+            return ActivosM::updateActivoM($tabla, $datos);
+        }
     }
 
-    if (isset($_POST['Serial'])) {
+    if (isset($_POST['SerialActivo'])) {
         $agregarA = new ActivosC();
         $agregarA -> datosActivo = $_POST;
         $agregarA -> agregarActivo();
@@ -63,4 +70,10 @@
         $idActivo = new ActivosC();
         $idActivo -> activo = $_POST;
         $idActivo -> allActivo();
+    }
+
+    if (isset($_POST['Activo'])) {
+        $update = new ActivosC();
+        $update -> updateActivo = $_POST;
+        $update -> updateActivo();
     }
