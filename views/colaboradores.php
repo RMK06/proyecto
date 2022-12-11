@@ -1,3 +1,4 @@
+<title>INVENTORY CONTROL CO | COLABORADORES</title>
 <?php
     require_once 'cabezote.php';
     require_once 'menu.php';
@@ -17,7 +18,6 @@
                             <caption></caption>
 							<thead>
 								<tr>
-									<th>ID</th>
 									<th>Nombre</th>
 									<th>apellido</th>
 									<th>Cedula</th>
@@ -25,6 +25,7 @@
 									<th>Correo</th>
 									<th>cargo</th>
 									<th>Estado</th>
+									<th>Acciones</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -34,7 +35,6 @@
 										 
 										?>
 											<tr>
-												<td><?php echo $colaboradores[$i]['id'] ?></td>
 												<td><?php echo $colaboradores[$i]['nombre'] ?></td>
 												<td><?php echo $colaboradores[$i]['apellidos'] ?></td>
 												<td><?php echo $colaboradores[$i]['cedula'] ?></td>
@@ -60,6 +60,16 @@
 															<?php
 														}
 													?>
+												</td>
+												<td>
+													<em style="font-size: 25px; font-weight: 500;"
+														class="icon-ro material-icons actualizar_usuario"
+														data-id="<?php echo $usuarios[$i]['id']; ?>">loop
+													</em>
+													<em style="font-size: 25px; font-weight: 500;"
+														class="icon-ro material-icons icono_Red eliminar_colaborador"
+														data-id="<?php echo $colaboradores[$i]['id'] ?>">delete
+													</em>
 												</td>
 											</tr>
 										<?php

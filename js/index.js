@@ -289,6 +289,28 @@ $(".mAgregar").click(function() {
 		})
 	});
 
+	$('.eliminar_colaborador').click(function(){
+		let idUsuario = $(this).attr("data-id");
+		let data = {
+			id: idUsuario,
+		}
+		$.ajax({
+			url: "../controllers/colaboradoresC.php",
+			type: 'POST',
+			data: data,
+			success: function(result) {
+				if (result == 1) {
+					M.toast({html: 'El usuario se ha eliminado correectamente'});
+					location.reload();
+				} else if(result == 2) {
+					M.toast({html: 'El usuario No se logro eliminar'});
+				}
+				
+			}
+		})
+	});
+	
+
 	//asignar activos
 	$('#btn_asignar_activo').click(function() {
 		let opcion = confirm("¿Esta seguro que desea Asignar Este activo?");

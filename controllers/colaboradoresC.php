@@ -19,9 +19,23 @@
             $tabla = `usuarios`;
             return ColaboradoresM::modificarUsuariosM($_POST, $tabla);
         }
+
+        public function eliminarColaborador()
+        {
+            $tabla = 'usuarios';
+            $datos = $this->eliminarC;
+            return ColaboradoresM::eliminarColaboradorM($datos, $tabla);
+            
+        }
     }
     if (isset($_POST['cedula_usuario'])) {
         $idEliminar = new ColaboradoresC();
         $idEliminar -> eliminarUsuario = $_POST;
         $idEliminar -> modificarUsuarios();
+    }
+
+    if (isset($_POST['id'])) {
+        $idColaborador = new ColaboradoresC();
+        $idColaborador -> eliminarC = $_POST['id'];
+        $idColaborador -> eliminarColaborador();
     }

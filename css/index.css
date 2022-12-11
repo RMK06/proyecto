@@ -200,6 +200,9 @@ li{
 .eliminar_usuario{
 	color: #C0392B !important;
 }
+.icono_Red {
+	color: #C0392B !important;
+}
 .eliminar_usuario:hover{
 	transform: rotate(360deg);
 	transform: all 5s;

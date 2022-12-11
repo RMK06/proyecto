@@ -52,4 +52,16 @@
                 echo 2;
             }
         }
+
+        public static function eliminarColaboradorM($datos, $tabla)
+        {
+            $sql = Conexion::conect()->prepare("DELETE FROM $tabla WHERE id = :id");
+            $sql->bindParam(":id", $datos, PDO::PARAM_STR);
+            if ($sql->execute()) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+
+        }
     }
