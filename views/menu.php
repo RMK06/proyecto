@@ -84,7 +84,7 @@
                                                     </a>
                                                 </li>
                                                 <li class="list__inside">
-                                                    <a href="activos.php?active=2">
+                                                    <a href="agregar_activo.php">
                                                         <span class="list__inside">Agregar Activos</span>
                                                     </a>
                                                 </li>

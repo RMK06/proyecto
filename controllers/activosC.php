@@ -19,4 +19,17 @@
             $tabla = 'usuarios';
             return ActivosM::idColaboradorM($tabla, $id);
         }
+
+        public function agregarActivo()
+        {
+            $tabla = 'activos';
+            $datos = $this->datosActivo;
+            return ActivosM::agregarActivoM($tabla, $datos);
+        }
+    }
+
+    if (isset($_POST['Serial'])) {
+        $agregarA = new ActivosC();
+        $agregarA -> datosActivo = $_POST;
+        $agregarA -> agregarActivo();
     }

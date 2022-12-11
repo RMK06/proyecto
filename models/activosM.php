@@ -1,4 +1,5 @@
 <?php
+    require_once '../config/database.php';
     class ActivosM
     {
         public static function allActivos($tabla)
@@ -20,5 +21,21 @@
                 $datos[] = $fila;
             }
             return $datos;
+        }
+
+        public static function agregarActivoM($tabla, $datos)
+        {
+            $sql = Conexion::conect()->prepare("INSERT INTO $tabla(`nombre`, `serial`, `placa`, `tipo`, `marca`,
+                                                `precio`, `detalles`, `estado`, `uso`)
+                                                VALUES ('".$datos['Nombre']."','".$datos['Serial']."'
+                                                ,'".$datos['Placa']."', '".$datos['Tipo']."',
+                                                '".$datos['Marca']."','".$datos['Precio']."',
+                                                '".$datos['Detalles']."','1','1') ");
+            if ($sql->execute()) {
+                echo 1;
+            } else {
+                echo 2;
+            }
+
         }
     }

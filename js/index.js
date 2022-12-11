@@ -309,6 +309,40 @@ $(".mAgregar").click(function() {
 			}
 		})
 	});
+
+	$('#btnActivo').click(function(){
+		if ($('#Nombre').val() == '' || $('#Nombre').val() == ' ') {
+			M.toast({html: 'Campo Obligatorio'});
+			$('#Nombre').focus();
+		}else if ($('#Serial').val() == '' || $('#Serial').val() == ' ') {
+			M.toast({html: 'Campo Obligatorio'});
+			$('#Serial').focus();
+		} else {
+			let data = {
+				Nombre: $('#Nombre').val(),
+				Serial: $('#Serial').val(),
+				Placa: $('#Placa').val(),
+				Tipo: $('#Tipo').val(),
+				Marca: $('#Marca').val(),
+				Precio: $('#Precio').val(),
+				estado: $('#estado').val(),
+				Detalles: $('#Detalles').val(),
+			}
+			$.ajax({
+				url: "../controllers/activosC.php",
+				type: 'POST',
+				data: data,
+				success: function(result) {
+					if (result == 1) {
+						M.toast({html: 'Se ha agregado el Activo correctamente'});
+						location.reload();
+					} else if(result == 2) {
+						M.toast({html: 'No se logro agregar el activo'});
+					}
+				}
+			})
+		}
+	});
 	
 
 	//asignar activos
