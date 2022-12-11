@@ -54,14 +54,14 @@
         {
             $table = 'usuarios';
             $datos = $this->validarC;
-            return AdministradorM::validarCorreo($table, $datos);
+            AdministradorM::validarCorreo($table, $datos);
         }
 
         public function agregarUsuario()
         {
             $table = 'usuarios';
             $datos = $this->agregarUsuario;
-            return AdministradorM::agregarUsuarioM($table, $datos);
+            AdministradorM::agregarUsuarioM($table, $datos);
         }
 
         public function eliminarUsuario()
