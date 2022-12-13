@@ -201,6 +201,7 @@ $(".mAgregar").click(function() {
 				metodo : 'agregar_usuario',
 				data: data,
 				success: function(result) {
+					console.log(result);
 					if (result == 1) {
 						M.toast({html: 'Agregado Correctamente'});
 						setTimeout(function(){
@@ -234,7 +235,6 @@ $(".mAgregar").click(function() {
 					type: 'POST',
 					data: data,
 					success: function(result) {
-						console.log(result);
 						if (result == 1) {
 							M.toast({html: 'Eliminado Correctamente'});
 							//setTimeout(function(){
@@ -368,13 +368,6 @@ $(".mAgregar").click(function() {
 			}
 		
 	});
-
-	
-
-
-	
-
-//activos
 	
 	$('.icono-ver-mas').click(function(){
 		$('#Detalles').parent().find('label').addClass('active');
@@ -388,7 +381,6 @@ $(".mAgregar").click(function() {
 			url: "../controllers/activosC.php",
 			success:function(result) {
 				let content = JSON.parse(result);
-				let id = content['id'];
 				$("#idActi").val(content[0]['id']);
 				$("#Nombre").val(content[0]['nombre']);
 				$("#Serial").val(content[0]['serial']);
@@ -417,29 +409,24 @@ $(".mAgregar").click(function() {
 						type: 'POST',
 						data: data,
 						success: function(result) {
-							console.log(result);
 							if (result == 1) {
 								M.toast({html: 'Se ha actualizado el Activo'});
 							} else if(result == 2) {
 								M.toast({html: 'No se logro Actualizar el activo'});
 							}
+							$('#close').click(function(){
+								location.reload();
+							});
+							$(document).on('keydown', function(event) {
+								if (event.key == "Escape") {
+									location.reload();
+								}
+							});
 						}
 					})
 				});
 			}
 		});
-	});
-
-
-
-	//pendientes
-	$('#pendientes').click(function() {
-		$(location).attr('href','pendientes.php');
-	});
-
-//reportes
-	$('#reportes').click(function() {
-		$(location).attr('href','reportes.php');
 	});
 
 //cerrar session
@@ -456,42 +443,7 @@ $(".mAgregar").click(function() {
 	}});
 });
 //fin
-let btn_salir = 0;
-	$('.salir').click(function() {
-		if (btn_salir == 0) {
-			btn_salir = 1;
-			M.toast({html: 'Cargando'});
-			let datos = {
-				metodo : 'btn_salir',
-			};
-			$.ajax({
-				url: "php/usuarios.php",
-				async: true,
-				type: 'POST',
-				data: datos,
-				success: function(result) {
-					M.Toast.dismissAll();
-					if (result == 1) {
-						M.toast({html: 'Redirigiendo'});
-						setTimeout(function() {
-							$(location).attr('href','index.php');
-						},1000);
-					} else {
-						M.toast({html: result});
-					}
-				}
-			});
-		}
-	});
-	$('.notificaciones').click(function(){
-		$(".contenido-notificaciones").css('bottom','241px');
-		$(".contenido-notificaciones").css('opacity','1');
-	});
-	$('#cerrar-notificaciones').click(function(){
-		$(".contenido-notificaciones").css('bottom','840px');
-		$(".contenido-notificaciones").css('opacity','0');
 
-	});
  
 
 

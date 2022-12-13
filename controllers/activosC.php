@@ -30,7 +30,7 @@
         {
             $tabla = 'activos';
             $datos = $this->datosActivo;
-            return ActivosM::agregarActivoM($tabla, $datos);
+            ActivosM::agregarActivoM($tabla, $datos);
         }
 
         public function deleteActivo()

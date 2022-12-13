@@ -1,9 +1,9 @@
+<title>INVENTORY CONTROL CO | ACTIVOS</title>
 <?php
     require_once 'cabezote.php';
     require_once 'menu.php';
     require_once '../controllers/activosC.php';
 ?>
-<title>Colaboradores | INVENTORY CONTROL CO</title>
 <div class="panel" id="panel" style="padding: 15px;">
     <?php
     
@@ -144,7 +144,7 @@
         </div>
     </div>
     <div class="modal-footer">
-      <a class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+      <a class="modal-close waves-effect waves-green btn-flat" id="close">Cerrar</a>
       <div class="btn" id="actualizarActivo">Actualizar</div>
     </div>
 </div>
